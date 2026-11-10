@@ -1,0 +1,996 @@
+<!doctype html>
+<html lang="ur" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>مثنوی سحرالبیان — داستان تیاری میں باغ کی | انٹرایکٹو سبق</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap">
+<style id="css">
+:root{--ink:#10342b;--em:#0e7a5c;--em2:#095a43;--mint:#e8f4e4;--paper:#fdfff9;--plum:#7a2e6e;--plum2:#5a1f50;--gold:#c9962b;--gold2:#8a6414;--sand:#f6ecd2;--line:#dcc88f;--bad:#b3402f;--ok:#0e7a5c}
+*{box-sizing:border-box}
+html{font-size:18px;scroll-behavior:smooth}
+body{margin:0;direction:rtl;font-family:'Jameel Noori Nastaleeq','Noori Nastaleeq','Noto Nastaliq Urdu','Urdu Typesetting',serif;line-height:2.15;color:var(--ink);min-height:100vh;
+background:#e8f4e4 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cpath d='M30 4l6 14 14-6-6 14 14 6-14 6 6 14-14-6-6 14-6-14-14 6 6-14-14-6 14-6-6-14 14 6z' fill='none' stroke='%230e7a5c' stroke-opacity='.09'/%3E%3C/svg%3E")}
+button,input,textarea,select{font-family:inherit;font-size:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:3px solid var(--plum);outline-offset:2px}
+h1,h2,h3,h4{font-weight:normal;margin:0}
+p{margin:.2em 0}
+
+/* header */
+.top{position:sticky;top:0;z-index:30;background:linear-gradient(90deg,var(--ink),var(--em2));color:#fff;border-bottom:4px solid var(--gold)}
+.top .row{max-width:1000px;margin:0 auto;display:flex;align-items:center;gap:10px;padding:2px 12px}
+.brand{font-size:1.3rem;flex:1;white-space:nowrap}
+.pill{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);border-radius:99px;padding:0 14px;line-height:1.9;white-space:nowrap}
+.ib{background:none;border:0;color:#fff;font-size:1.15rem;padding:0 6px}
+#nav{display:flex;gap:6px;overflow-x:auto;padding:2px 12px 8px;max-width:1000px;margin:0 auto;scrollbar-width:thin}
+#nav button{flex:none;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);color:#fff;border-radius:99px;padding:0 12px;line-height:1.9;font-size:.82rem;white-space:nowrap}
+#nav button.on{background:var(--gold);color:#2b1d00;border-color:var(--gold)}
+#nav button.ck::after{content:" ✓"}
+
+.view{display:none;max-width:1000px;margin:0 auto;padding:16px 14px 90px}
+.view.active{display:block}
+
+/* common blocks */
+.card{background:var(--paper);border:2px solid var(--line);border-radius:20px;padding:14px 18px;margin:14px 0;box-shadow:0 5px 0 rgba(16,52,43,.1)}
+.card h3{color:var(--plum);font-size:1.25rem}
+.shead{display:flex;gap:14px;align-items:center;margin:4px 0 8px}
+.shead h2{font-size:1.8rem;color:var(--plum);line-height:1.7}
+.shead p{color:var(--em2);font-size:.95rem;line-height:1.9}
+.badge{flex:none;width:64px;height:64px;border-radius:50% 50% 16px 16px;background:linear-gradient(var(--gold),#e7c25f);border:3px solid var(--gold2);display:grid;place-items:center;font-size:1.9rem;line-height:1}
+.talk{background:#fff3c9;border:2px dashed var(--gold);border-radius:14px;padding:2px 14px;margin:12px 0;font-size:.95rem}
+.btn{background:var(--em);color:#fff;border:0;border-bottom:5px solid var(--em2);border-radius:14px;padding:2px 20px;line-height:2;transition:transform .08s}
+.btn:active{transform:translateY(3px);border-bottom-width:2px}
+.btn.gold{background:var(--gold);color:#2b1d00;border-bottom-color:var(--gold2)}
+.btn.plum{background:var(--plum);border-bottom-color:var(--plum2)}
+.btn.ghost{background:#fff;color:var(--ink);border:2px solid var(--line);border-bottom-width:4px}
+.btn.ghost.on{background:var(--plum);color:#fff;border-color:var(--plum2)}
+.btn.big{font-size:1.3rem;padding:4px 30px}
+.btn[disabled]{opacity:.5;cursor:default}
+.nextbar{text-align:center;margin-top:24px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.tab{background:#fff;border:2px solid var(--line);border-bottom-width:4px;border-radius:99px;padding:0 18px;line-height:2}
+.tab.on{background:var(--plum);color:#fff;border-color:var(--plum2)}
+.pane[hidden]{display:none}
+.mh{margin:22px 0 8px;font-size:1.3rem;color:var(--plum)}
+
+/* hero + map */
+.hero{background:linear-gradient(180deg,#fff8e0,#e8f4e4);border:2px solid var(--line);border-radius:30px;overflow:hidden;box-shadow:0 8px 0 rgba(16,52,43,.1)}
+.hero .ttl{text-align:center;padding:10px 10px 0}
+.hero h1{font-size:3rem;color:var(--plum);line-height:1.7}
+.hero .sub{color:var(--em2);font-size:1.1rem;line-height:1.9}
+.hero .cta{text-align:center;padding:4px 0 16px}
+.goals{margin:6px 0;padding:0 22px}
+.goals li{margin:2px 0}
+.modes{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:8px}
+.map{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+.st{position:relative;text-align:right;background:var(--paper);border:2px solid var(--line);border-radius:80px 80px 18px 18px;padding:6px 16px 10px;display:flex;flex-direction:column;gap:0;box-shadow:0 5px 0 rgba(16,52,43,.1);line-height:1.8}
+.st .ico{font-size:2rem;line-height:1.5;text-align:center}
+.st b{font-weight:normal;font-size:1.15rem;color:var(--plum);text-align:center}
+.st small{font-size:.82rem;color:#4b6b60;text-align:center;line-height:1.7}
+.st .stars{text-align:center;margin-top:4px;font-size:.85rem;color:var(--gold2)}
+.st.done{background:#ecf8ef;border-color:var(--ok)}
+.st:hover{transform:translateY(-3px)}
+#fin{display:none;text-align:center;border-color:var(--gold);background:linear-gradient(#fff6d6,#fffdf2)}
+#fin h3{font-size:1.6rem}
+
+/* poem */
+.sher{position:relative;display:flex;gap:16px;background:linear-gradient(#fffdf4,#fff7de);border:2px solid var(--line);border-radius:46px 46px 16px 16px;padding:12px 26px 6px;margin:20px 0 10px;align-items:center}
+.sher .no{position:absolute;right:50%;top:-18px;transform:translateX(50%);background:var(--plum);color:#fff;border-radius:99px;min-width:34px;height:34px;display:grid;place-items:center;line-height:1;font-size:1rem;padding-top:6px}
+.sher .m{flex:1;text-align:center;font-size:1.3rem;line-height:2.4}
+.tok{padding:0 2px;border-radius:6px}
+.tok.has{cursor:pointer;border-bottom:2px dotted var(--gold)}
+.tok.has:hover{background:#ffe9a8}
+#bubble{position:fixed;bottom:16px;left:50%;transform:translateX(-50%) translateY(30px);z-index:60;max-width:min(560px,92vw);background:var(--ink);color:#fff;border:3px solid var(--gold);border-radius:18px;padding:6px 18px;opacity:0;pointer-events:none;transition:.25s;line-height:2}
+#bubble.show{opacity:1;transform:translateX(-50%);pointer-events:auto}
+#bubble b{color:#ffd96b;font-weight:normal;font-size:1.15rem}
+#bubble .bx{font-size:.88rem;color:#cfeadf}
+.poet{display:flex;gap:14px;align-items:center}
+.poet .av{flex:none;width:70px;height:70px;border-radius:50%;background:var(--sand);border:3px solid var(--gold);display:grid;place-items:center;font-size:2rem;line-height:1}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0}
+.chip{background:#fff;border:2px solid var(--line);border-radius:99px;padding:0 14px;line-height:1.9;font-size:.95rem}
+.chip.sel{background:var(--plum);color:#fff;border-color:var(--plum2)}
+.chip.right{background:#d8f1e4;border-color:var(--ok);color:var(--ink)}
+.chip.wrong{background:#fbe0da;border-color:var(--bad);color:var(--ink)}
+
+/* flip cards */
+.fgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:12px}
+.fc{perspective:800px;height:210px}
+.fc .in{position:relative;width:100%;height:100%;transition:transform .55s;transform-style:preserve-3d}
+.fc.flip .in{transform:rotateY(180deg)}
+.fc .f,.fc .b{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:18px;padding:8px 10px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;border:2px solid var(--line)}
+.fc .f{background:linear-gradient(#fffdf4,#fff1c9);font-size:1.45rem;color:var(--plum)}
+.fc .f small{font-size:.75rem;color:#6b7f76;line-height:1.6}
+.fc .b{background:#eaf7f0;transform:rotateY(180deg);font-size:.82rem;line-height:1.85;border-color:var(--ok)}
+.fc .b b{color:var(--plum);font-weight:normal}
+.fc .b .ex{margin-top:4px;color:#355;font-size:.78rem}
+
+/* match */
+.mg{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.col{display:flex;flex-direction:column;gap:8px}
+.tile{border:2px solid var(--line);border-bottom-width:4px;background:#fff;border-radius:14px;padding:0 10px;line-height:1.95;text-align:center;font-size:1rem}
+.tile.long{font-size:.95rem;line-height:2.1}
+.tile.sel{border-color:var(--plum);background:#f6e7f3}
+.tile.done{background:#d8f1e4;border-color:var(--ok);cursor:default;opacity:.85}
+.tile.hint{animation:blink .45s 3}
+.tile.shake{animation:shake .4s}
+.ground{min-height:44px;margin-top:10px;font-size:1.5rem;text-align:center;letter-spacing:4px}
+.ground span{display:inline-block;animation:pop .5s}
+.row-btns{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0}
+
+/* quiz */
+.qbar{display:flex;align-items:center;gap:10px;font-size:.9rem;color:#4b6b60}
+.pb{flex:1;height:10px;background:#dfe9d8;border-radius:9px;overflow:hidden}
+.pb i{display:block;height:100%;background:linear-gradient(90deg,var(--em),var(--gold));transition:width .4s}
+.qbox{margin-top:8px}
+.qpre{color:var(--plum);font-size:1rem}
+.qq{font-size:1.2rem;line-height:2.3;margin:2px 0 8px}
+.qq .m2{display:block;text-align:center;background:var(--sand);border-radius:12px;margin:4px 0;font-size:1.25rem}
+.blank{display:inline-block;min-width:70px;border-bottom:3px solid var(--plum);text-align:center;color:var(--plum)}
+.qo{display:grid;gap:8px}
+.opt{text-align:right;background:#fff;border:2px solid var(--line);border-bottom-width:4px;border-radius:14px;padding:0 14px;line-height:2.1;font-size:1rem}
+.opt:hover:not([disabled]){border-color:var(--plum);background:#faf1f8}
+.opt.ok{background:#d8f1e4;border-color:var(--ok)}
+.opt.bad{background:#fbe0da;border-color:var(--bad);opacity:.75}
+.opt[disabled]{cursor:default}
+.fb{margin-top:8px;font-size:.95rem;line-height:2}
+.fb .good{color:var(--ok)}.fb .warn{color:#8a5a00}.fb .badmsg{color:var(--bad)}
+.qn{margin-top:8px}
+.result{text-align:center;padding:8px}
+.result .big{font-size:2.2rem;letter-spacing:6px}
+
+/* teaching steps */
+.pills{display:flex;gap:8px;flex-wrap:wrap}
+.step{border-right:5px solid var(--gold);background:#fff;border-radius:6px 16px 16px 6px;padding:2px 14px 8px;margin:10px 0;animation:rise .5s}
+.step[hidden]{display:none}
+.step h4{color:var(--plum);font-size:1.1rem}
+.mean{background:#eaf7f0;border-radius:12px;padding:2px 12px;margin-top:6px;font-size:1rem;line-height:2.2}
+.full{background:#fff8e3;border:2px solid var(--gold);border-radius:14px;padding:4px 14px;font-size:1rem;line-height:2.3}
+.order-pool,.order-ans{display:flex;flex-direction:column;gap:8px;margin:8px 0}
+.ochunk{text-align:right;background:#fff;border:2px solid var(--line);border-bottom-width:4px;border-radius:14px;padding:0 12px;line-height:2.1;font-size:.95rem}
+.ochunk.used{opacity:.3;pointer-events:none}
+.ochunk.shake{animation:shake .4s}
+.slot{min-height:44px;border:2px dashed var(--line);border-radius:14px;padding:0 12px;line-height:2.1;font-size:.95rem;background:#f8fbf5;color:#789}
+.slot.filled{border-style:solid;border-color:var(--ok);background:#d8f1e4;color:var(--ink)}
+
+/* garden */
+.scene-wrap{position:relative;line-height:0;background:#cfe9f4}
+.scene{width:100%;height:auto;display:block}
+.build .rv{opacity:0;transform:translateY(12px);transition:opacity .9s,transform .9s}
+.build .rv.on{opacity:1;transform:none}
+.build .bf1,.build .bf2{display:none}
+.build.fly .bf1,.build.fly .bf2{display:block}
+.cl{animation:drift 40s linear infinite alternate}
+.bz{animation:breeze 3s ease-in-out infinite alternate}
+.sway{transform-box:fill-box;transform-origin:50% 100%;animation:sway 4s ease-in-out infinite alternate}
+.bf1{animation:fly1 9s ease-in-out infinite alternate}
+.bf2{animation:fly2 11s ease-in-out infinite alternate}
+.wing{transform-box:fill-box;transform-origin:center;animation:flap .25s infinite alternate}
+.gclue{display:flex;gap:10px;flex-direction:column}
+.gopts{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px}
+.gopt{background:#fff;border:2px solid var(--line);border-bottom-width:4px;border-radius:18px;padding:4px 10px;line-height:1.9;font-size:.95rem;text-align:center}
+.gopt .e{display:block;font-size:2.2rem;line-height:1.4}
+.gopt:hover:not([disabled]){border-color:var(--plum);background:#faf1f8}
+.gopt.bad{background:#fbe0da;border-color:var(--bad);opacity:.7}
+.gopt.ok{background:#d8f1e4;border-color:var(--ok)}
+.quote{background:var(--sand);border-radius:14px;text-align:center;font-size:1.25rem;line-height:2.3;padding:0 10px}
+.quote small{display:block;font-size:.8rem;color:var(--gold2);line-height:1.5}
+
+/* sort */
+.buckets{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-top:10px}
+.bucket{background:#fff;border:2px dashed var(--plum);border-radius:16px;padding:4px 10px;min-height:120px;text-align:center}
+.bucket:hover{background:#faf1f8}
+.bucket h4{color:var(--plum);font-size:1rem;line-height:1.8}
+.bucket small{display:block;font-size:.75rem;color:#6b7f76;line-height:1.5}
+.bucket .in{display:flex;flex-wrap:wrap;gap:5px;justify-content:center;margin-top:4px}
+.bucket .in span{background:#d8f1e4;border-radius:99px;padding:0 10px;font-size:.85rem;line-height:1.9}
+.sortpool{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:10px 0;min-height:60px}
+.sc{background:#fff6d6;border:2px solid var(--gold);border-bottom-width:4px;border-radius:14px;padding:0 12px;line-height:2;font-size:.95rem}
+.sc.sel{background:var(--plum);color:#fff;border-color:var(--plum2)}
+.sc.shake{animation:shake .4s}
+
+/* create / fav */
+textarea.free,.doc textarea,.doc input[type=text],.field{width:100%;border:2px solid var(--line);border-radius:12px;background:#fffef8;padding:2px 10px;line-height:2.2;resize:vertical}
+.field{border-radius:12px}
+.used{font-size:.9rem;color:var(--em2)}
+.used .u{background:#d8f1e4;border-radius:99px;padding:0 8px;margin-inline-start:4px}
+.preview{margin-top:10px;border-radius:18px;padding:10px 20px;background:linear-gradient(180deg,#cfe9f4,#fff4d6 55%,#8fd0a8);border:3px solid var(--gold);text-align:center;font-size:1.25rem;line-height:2.5;white-space:pre-wrap;min-height:90px}
+.favgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:8px}
+.favb{text-align:center;background:#fff;border:2px solid var(--line);border-radius:14px;padding:0 8px;line-height:1.9;font-size:.9rem}
+.favb.sel{background:var(--plum);color:#fff;border-color:var(--plum2)}
+.rubric label{display:block;cursor:pointer;line-height:2}
+.rubric input{width:20px;height:20px;vertical-align:middle;accent-color:var(--em);margin-inline-start:8px}
+
+/* worksheet */
+.ws-actions{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0}
+.doc{background:#fff;border:3px double #3a3a3a;border-radius:6px;padding:18px 20px;line-height:2.1;font-size:1rem}
+.doc .dt{text-align:center}
+.doc .dt h2{color:var(--plum);font-size:1.8rem}
+.doc .dt p{color:#444}
+.doc h3{background:var(--plum);color:#fff;padding:0 14px;border-radius:8px;margin:22px 0 8px;font-size:1.1rem;line-height:2}
+.doc .info{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:8px;margin-top:10px}
+.doc .info label{display:block;font-size:.85rem;color:#555;line-height:1.6}
+.doc table{width:100%;border-collapse:collapse}
+.doc td,.doc th{border:1.5px solid #777;padding:0 8px;vertical-align:middle}
+.doc th{background:#efe6f0;font-weight:normal}
+.doc td.w{width:22%;text-align:center;font-size:1.1rem;color:var(--plum);white-space:nowrap}
+.doc td.n{width:6%;text-align:center}
+.doc textarea,.doc input[type=text]{border:0;border-radius:0;background:#fbfbf2;resize:none;overflow:hidden;line-height:2.2;min-height:46px}
+.doc .tbox{border:2px solid var(--line);border-radius:14px;padding:6px 10px;margin:10px 0;break-inside:avoid}
+.doc .tbox .sh{text-align:center;background:var(--sand);border-radius:10px;font-size:1.1rem;line-height:2.3}
+.doc .tbox .nm{display:inline-block;background:#d8f1e4;border-radius:8px;padding:0 8px;font-size:.8rem;line-height:1.7}
+.rate{display:flex;gap:6px;flex-wrap:wrap}
+.rate label{border:2px solid var(--line);border-radius:99px;padding:0 10px;font-size:.85rem;cursor:pointer;line-height:1.9}
+.rate input{display:none}
+.rate input:checked+span{background:var(--plum);color:#fff;border-radius:99px;padding:0 8px}
+.key{margin-top:18px;background:#fff8e3;border:2px solid var(--gold);border-radius:14px;padding:4px 14px}
+.key summary{cursor:pointer;color:var(--gold2)}
+.key table{width:100%;border-collapse:collapse;font-size:.9rem}
+.key td{border:1px solid #bba;padding:0 8px;line-height:1.9}
+
+/* feedback fx */
+.confetti{position:fixed;inset:0;pointer-events:none;z-index:80;overflow:hidden}
+.confetti span{position:absolute;top:-40px;animation:fall 3s linear forwards}
+.toast{position:fixed;bottom:80px;left:50%;transform:translateX(-50%);background:var(--ink);color:#fff;border:2px solid var(--gold);padding:0 18px;border-radius:99px;z-index:70;line-height:2.2}
+
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+@keyframes blink{50%{background:#fff0a0;border-color:var(--gold)}}
+@keyframes pop{from{transform:scale(0)}to{transform:scale(1)}}
+@keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes drift{from{transform:translateX(-30px)}to{transform:translateX(260px)}}
+@keyframes breeze{from{transform:translateX(0);opacity:.3}to{transform:translateX(36px);opacity:.9}}
+@keyframes sway{from{transform:rotate(-1.6deg)}to{transform:rotate(1.6deg)}}
+@keyframes flap{from{transform:scaleX(1)}to{transform:scaleX(.35)}}
+@keyframes fly1{from{transform:translate(0,0)}to{transform:translate(240px,-40px)}}
+@keyframes fly2{from{transform:translate(0,0)}to{transform:translate(-220px,30px)}}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg)}}
+
+@media(max-width:620px){
+ html{font-size:16px}
+ .sher{flex-direction:column;gap:0;padding:12px 12px 6px}
+ .mg{gap:8px}
+ .hero h1{font-size:2.3rem}
+ .shead h2{font-size:1.45rem}
+ .badge{width:52px;height:52px;font-size:1.5rem}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+@media print{
+ body{background:#fff}
+ .top,.noprint,.nextbar,#bubble,.toast{display:none!important}
+ .view{display:none!important}
+ .view.active{display:block!important;padding:0;max-width:none}
+ .shead{display:none}
+ .doc{border:2px solid #000;font-size:12pt}
+ .doc h3{background:#fff;color:#000;border:2px solid #000}
+ .doc textarea,.doc input{background:#fff!important}
+ .key{display:none!important}
+}
+
+[hidden]{display:none!important}
+.sway{transform-box:fill-box}
+.doc .info input{width:100%}
+.doc .info input[readonly]{background:#f1f1ea}
+.doc select{font-family:inherit;font-size:inherit}
+@media print{.doc textarea{height:auto}}
+html,body{overflow-x:hidden}.brand{overflow:hidden;text-overflow:ellipsis}
+
+</style>
+</head>
+<body>
+<header class="top"><div class="row"><div class="brand">🌸 سحرالبیان — باغ کی تیاری</div><div class="pill">⭐ <span id="pts">۰</span></div><button class="ib" id="snd" title="آواز">🔊</button><button class="ib" id="homeb" title="نقشہ">🏠</button></div><nav id="nav"></nav></header>
+<main id="app"></main>
+<div id="bubble" role="status" aria-live="polite"></div>
+<script>
+/* ================= DATA ================= */
+const ASHAAR=[
+{a:"مئے ارغوانی پلا ساقیا",b:"کہ تعمیر کو باغ کی دل چلا",q:["ساقیا","چلا"]},
+{a:"عمارت کی خوبی دروں کی وہ شان",b:"لگے جس میں زربفت کے سائبان",q:["شان","سائبان"]},
+{a:"زمرد کے مانند سبزے کا رنگ",b:"روش پر جواہر لگے جیسے سنگ",q:["رنگ","سنگ"]},
+{a:"چمن سے بھرا باغ گل سے چمن",b:"کہیں نرگس و گل کہیں یاسمن",q:["چمن","یاسمن"]},
+{a:"چنبیلی کہیں اور کہیں موتیا",b:"کہیں رائے بیل اور کہیں موگرا",q:["موتیا","موگرا"]},
+{a:"کہیں ارغواں اور کہیں لالہ زار",b:"جدی اپنے موسم میں سب کی بہار",q:["زار","بہار"]},
+{a:"خراماں صبا صحن میں چار سو",b:"دماغوں کو دیتی ہر اک گل کی بو",q:["سو","بو"]},
+{a:"چمن آتشِ گل سے مہکا ہوا",b:"ہوا کے سبب باغ مہکا ہوا",q:["مہکا ہوا","مہکا ہوا"]},
+{a:"صبا جو گئی ڈھیریاں کر کے بھول",b:"پڑے ہر طرف مولسریوں کے پھول",q:["بھول","پھول"]},
+{a:"ہوا ان گلوں سے دو بالا سماں",b:"اسی باغ میں تھا وہ سرو رواں",q:["سماں","رواں"]}
+];
+
+/* k = شعر میں آنے والی شکلیں (ٹیپ پر معنی کے لیے) */
+const WORDS=[
+{w:"مئے",k:["مئے"],m:"شراب (شاعری میں سرور اور جوش کی علامت)",ex:"شاعر نے مئے کو جوش اور سرور کی علامت بنایا۔"},
+{w:"ارغوانی",k:["ارغوانی"],m:"گہرا سرخی مائل جامنی رنگ",ex:"گڑیا نے ارغوانی رنگ کا دوپٹہ اوڑھ رکھا تھا۔"},
+{w:"ساقی",k:["ساقی","ساقیا"],m:"پلانے والا",ex:"محفل میں ساقی سب کو شربت پلا رہا تھا۔"},
+{w:"تعمیر",k:["تعمیر"],m:"بنانا؛ بنانے اور سجانے کا عمل",ex:"ہمارے محلے میں نئی مسجد کی تعمیر مکمل ہو گئی۔"},
+{w:"دروں",k:["دروں"],m:"اندر، اندرونی حصہ",ex:"محل کے دروں میں قیمتی قالین بچھے تھے۔"},
+{w:"شان",k:["شان"],m:"شوکت، رعب اور رونق",ex:"قلعے کی شان دیکھ کر سب حیران رہ گئے۔"},
+{w:"زربفت",k:["زربفت"],m:"سنہری تاروں سے بنا قیمتی کپڑا",ex:"دلہن نے زربفت کا لباس پہنا ہوا تھا۔"},
+{w:"سائبان",k:["سائبان"],m:"دھوپ سے بچانے والا سایہ دار شامیانہ",ex:"ہم نے صحن میں سائبان لگا لیا تاکہ دھوپ نہ لگے۔"},
+{w:"زمرد",k:["زمرد"],m:"سبز رنگ کا قیمتی پتھر",ex:"اس انگوٹھی میں سبز زمرد جڑا ہوا ہے۔"},
+{w:"روش",k:["روش"],m:"باغ کی پگڈنڈی، باغ کا راستہ",ex:"ہم باغ کی روش پر آہستہ آہستہ چل رہے تھے۔"},
+{w:"جواہر",k:["جواہر"],m:"قیمتی پتھر، ہیرے موتی",ex:"خزانے میں سونے کے ساتھ جواہر بھی بھرے تھے۔"},
+{w:"سنگ",k:["سنگ"],m:"پتھر",ex:"ندی کے کنارے ایک بڑا سنگ رکھا تھا۔"},
+{w:"چمن",k:["چمن"],m:"باغ؛ پھولوں کی کیاری",ex:"ہمارے اسکول کا چمن بہت خوبصورت ہے۔"},
+{w:"نرگس",k:["نرگس"],m:"آنکھ جیسی شکل کا خوشبودار پھول",ex:"شاعر نے خوبصورت آنکھ کو نرگس سے تشبیہ دی۔"},
+{w:"یاسمن",k:["یاسمن"],m:"چنبیلی کی قسم کا سفید خوشبودار پھول",ex:"رات کو یاسمن کی خوشبو سارے صحن میں پھیل گئی۔"},
+{w:"لالہ زار",k:["لالہ","زار"],m:"لالہ کے سرخ پھولوں کی کیاری یا کھیت",ex:"پہاڑ کے دامن میں دور تک سرخ لالہ زار نظر آیا۔"},
+{w:"جدی",k:["جدی"],m:"الگ، جدا",ex:"دونوں دوستوں کے راستے جدی ہو گئے۔"},
+{w:"خراماں",k:["خراماں"],m:"ناز اور وقار سے آہستہ چلتا ہوا",ex:"مور خراماں خراماں چل رہا تھا۔"},
+{w:"صبا",k:["صبا"],m:"صبح کی ٹھنڈی اور نرم ہوا",ex:"صبا کے جھونکوں نے سب کو تازہ دم کر دیا۔"},
+{w:"چار سو",k:["چار","سو"],m:"چاروں طرف",ex:"بارش کے بعد چار سو ہریالی پھیل گئی۔"},
+{w:"مہکا ہوا",k:["مہکا"],m:"خوشبو سے بھرا ہوا",ex:"کمرہ گلاب کی خوشبو سے مہکا ہوا تھا۔"},
+{w:"ڈھیریاں",k:["ڈھیریاں"],m:"ڈھیر کی جمع، چھوٹے چھوٹے ڈھیر",ex:"بچوں نے ساحل پر ریت کی ڈھیریاں بنا لیں۔"},
+{w:"مولسری",k:["مولسری","مولسریوں"],m:"خوشبودار سفید پھولوں والا درخت (یا اس کا پھول)",ex:"ہمارے گھر کے سامنے مولسری کا گھنا درخت ہے۔"},
+{w:"دو بالا",k:["دو","بالا"],m:"دگنا، بہت بڑھ جانا",ex:"مہمانوں کے آنے سے عید کی خوشی دو بالا ہو گئی۔"},
+{w:"سماں",k:["سماں"],m:"منظر، ماحول، کیفیت",ex:"بارش میں عجیب سماں بندھ گیا تھا۔"},
+{w:"سرو رواں",k:["سرو","رواں"],m:"چلتا ہوا سرو؛ بلند قامت حسین ہستی",ex:"شاعر نے بلند قامت محبوب کو سرو رواں کہا۔"},
+{w:"چنبیلی، موتیا، موگرا",k:["چنبیلی","موتیا","موگرا"],m:"سفید خوشبودار پھولوں کی قسمیں",ex:"باغ میں چنبیلی، موتیا اور موگرا کھلے ہوئے تھے۔"}
+];
+
+const EXTRA={
+ "ارغواں":"ارغواں: گہرے سرخ/جامنی پھولوں والا درخت یا اس کا پھول",
+ "رائے":"رائے بیل: موتیے کی طرح کا سفید خوشبودار پھول",
+ "بیل":"رائے بیل: موتیے کی طرح کا سفید خوشبودار پھول",
+ "گل":"گل: پھول",
+ "بو":"بو: خوشبو (یہاں)",
+ "دماغوں":"دماغ: ذہن؛ یہاں سونگھنے اور تازگی محسوس کرنے کی حس",
+ "صحن":"صحن: کھلا آنگن، باغ کا کھلا حصہ",
+ "سبزے":"سبزہ: ہری گھاس، ہریالی",
+ "خوبی":"خوبی: اچھائی، حسن",
+ "عمارت":"عمارت: مکان، محل",
+ "مانند":"مانند: جیسا، کی طرح",
+ "چلا":"دل چلا: دل چاہا، خواہش ہوئی",
+ "بھول":"بھول: بھول جانا (ڈھیریاں کر کے بھول گئی)",
+ "آتش":"آتشِ گل: پھولوں کی آگ جیسی تیز چمک اور جوش",
+ "ہوا":"ہوا: (۱) فضا کی ہوا، (۲) ہو گیا / بن گیا۔ شعر دیکھ کر معنی طے کریں۔"
+};
+const DICT={};
+WORDS.forEach(x=>x.k.forEach(k=>{DICT[k]={w:x.w,m:x.m,ex:x.ex}}));
+Object.keys(EXTRA).forEach(k=>{const [w,...r]=EXTRA[k].split(': ');DICT[k]={w:w,m:r.join(': ')}});
+
+/* تشریحات (استاد کے ساتھ ۱ تا ۴ سیکھیں گے، باقی طلبہ خود لکھیں گے) */
+const FULL=[
+"شاعر ساقی کو مخاطب کر کے کہتا ہے کہ اے ساقی! مجھے گہرے ارغوانی رنگ کی مئے پلا دے، کیونکہ میرا دل باغ کی تعمیر، یعنی اس کی تیاری اور سجاوٹ کا حال بیان کرنے کو چاہ رہا ہے۔ قدیم شاعری میں مئے اور ساقی جوش و سرور اور تخلیقی کیفیت کی علامت ہوتے ہیں، یوں شاعر پورے جوش کے ساتھ داستان کا آغاز کرتا ہے۔",
+"اس شعر میں باغ کی عمارت کی خوبصورتی اور اس کے اندرونی حصوں کی شان بیان کی گئی ہے۔ وہاں زربفت، یعنی سنہری تاروں سے بنے قیمتی کپڑے کے سائبان لگے ہوئے تھے۔ اس سے معلوم ہوتا ہے کہ یہ کوئی عام باغ نہیں بلکہ شاہانہ شان و شوکت والا باغ تھا۔",
+"شاعر کہتا ہے کہ باغ کے سبزے کا رنگ زمرد جیسا گہرا اور چمکدار سبز ہے اور باغ کی روشوں پر قیمتی جواہر اس طرح جڑے ہیں جیسے وہ عام پتھر ہوں۔ یہاں تشبیہ کے ذریعے سبزے کو زمرد اور پتھروں کو جواہر کہہ کر باغ کی دولت مندی اور حسن کو نمایاں کیا گیا ہے۔",
+"باغ میں چمن ہی چمن ہیں اور ہر چمن پھولوں سے بھرا ہوا ہے۔ کہیں نرگس کھلی ہے، کہیں گل (پھول) اور کہیں یاسمن۔ شاعر ہمیں بتاتا ہے کہ باغ میں پھولوں کی کثرت بھی ہے اور رنگا رنگی بھی۔",
+"اس شعر میں شاعر مزید پھولوں کے نام گنواتا ہے: چنبیلی، موتیا، رائے بیل اور موگرا۔ یہ سب سفید اور خوشبودار پھول ہیں۔ «کہیں ... کہیں» کی تکرار سے باغ کی وسعت کا احساس ہوتا ہے، یعنی ہر طرف الگ الگ پھول کھلے ہیں۔",
+"کہیں ارغواں کے سرخ و جامنی پھول ہیں اور کہیں لالہ کے کھیت۔ شاعر کہتا ہے کہ ہر پھول کی بہار اپنے الگ موسم میں آتی ہے، یوں باغ سال کے مختلف دنوں میں کسی نہ کسی پھول سے سجا رہتا ہے۔",
+"صبح کی نرم ہوا باغ کے صحن میں چاروں طرف ناز سے آہستہ آہستہ چلتی پھرتی ہے اور ہر پھول کی خوشبو لوگوں کے دماغوں تک پہنچاتی ہے۔ شاعر نے صبا کو ایک انسان کی طرح خراماں دکھایا ہے، اسے تشخیص (جان دار بنا کر پیش کرنا) کہتے ہیں۔",
+"پورا چمن پھولوں کی تیز چمک اور خوشبو سے مہک رہا ہے اور ہوا چلنے کی وجہ سے یہ خوشبو سارے باغ میں پھیل گئی ہے۔ پہلے مصرع میں پھولوں کے رنگ و خوشبو کی شدت (آتش) بیان ہوئی ہے اور دوسرے مصرع میں ہوا کا کردار۔",
+"شاعر خوبصورت تخیل سے کام لیتا ہے کہ صبا جب گزری تو جیسے پھولوں کی ڈھیریاں لگا کر انہیں اٹھانا بھول گئی۔ اسی لیے ہر طرف مولسری کے پھول بکھرے ہوئے ہیں۔ یہاں بھی ہوا کو ایک بھولنے والے انسان کی طرح پیش کیا گیا ہے۔",
+"ان پھولوں کی وجہ سے باغ کا منظر دگنا حسین ہو گیا۔ اسی دل کش باغ میں وہ سرو رواں، یعنی سرو کے درخت جیسی بلند قامت اور خوبصورت چلتی پھرتی ہستی، موجود تھی۔ یوں شاعر باغ کے حسن کے بعد داستان کے اصل کردار کی طرف آتا ہے۔ (یاد رکھیں: یہاں «ہوا» کا مطلب «بن گیا» ہے۔)"
+];
+
+const TASH=[
+{w:["مئے","ارغوانی","ساقیا","تعمیر","چلا"],
+ mean:"شاعر ساقی سے کہتا ہے: مجھے ارغوانی مئے پلا دے، میرا دل باغ کی تیاری کا حال سنانے کو چاہتا ہے۔",
+ kamal:["ساقی سے خطاب","جوش اور سرور کا اظہار","داستان کا دلکش آغاز"],
+ chk:{q:"اس شعر میں شاعر کس سے بات کر رہا ہے؟",opts:["ساقی سے","باغ کے مالی سے","صبا سے","شہزادی سے"],a:0,why:"«ساقیا» کہہ کر شاعر ساقی کو مخاطب کرتا ہے۔",hint:"پہلے مصرع کا آخری لفظ دیکھیں۔"}},
+{w:["عمارت","دروں","شان","زربفت","سائبان"],
+ mean:"باغ کی عمارت اور اس کے اندر کی شان ایسی تھی کہ وہاں سنہری زربفت کے سائبان لگے تھے۔",
+ kamal:["شان و شوکت کا بیان","منظر کشی","قیمتی کپڑے کی مثال"],
+ chk:{q:"«زربفت کے سائبان» سے باغ کی عمارت کی کون سی بات ظاہر ہوتی ہے؟",opts:["امیرانہ شان و شوکت","غربت اور سادگی","بارش سے بچاؤ","عمارت کا پرانا ہونا"],a:0,why:"زربفت سنہری قیمتی کپڑا ہے، اس لیے یہ دولت اور شان کی نشانی ہے۔",hint:"زربفت کے معنی یاد کریں۔"}},
+{w:["زمرد","سبزے","روش","جواہر","سنگ"],
+ mean:"سبزے کا رنگ زمرد جیسا ہے اور راستوں میں جواہر یوں جڑے ہیں جیسے عام پتھر ہوں۔",
+ kamal:["تشبیہ: سبزہ ← زمرد","تشبیہ: پتھر ← جواہر","دولت مندی کا تاثر"],
+ chk:{q:"«سبزے کا رنگ زمرد کے مانند» میں شاعر نے کون سی خوبی استعمال کی ہے؟",opts:["تشبیہ (ایک چیز کو دوسری جیسا کہنا)","تضاد (الٹ باتیں)","سوال و جواب","محاورہ"],a:0,why:"«کے مانند» اور «جیسے» تشبیہ کی نشانیاں ہیں۔",hint:"«مانند» اور «جیسے» جیسے الفاظ پر غور کریں۔"}},
+{w:["چمن","نرگس","یاسمن","گل"],
+ mean:"باغ چمنوں سے اور چمن پھولوں سے بھرے ہیں؛ کہیں نرگس ہے، کہیں گل اور کہیں یاسمن۔",
+ kamal:["کثرت کا بیان","پھولوں کے نام","«کہیں ... کہیں» کی تکرار"],
+ chk:{q:"اس شعر کا مرکزی نکتہ کیا ہے؟",opts:["باغ میں پھولوں کی کثرت اور رنگا رنگی","باغ کا بڑا دروازہ","قیمتی کپڑوں کی دکان","رات کا اندھیرا"],a:0,why:"شاعر نے نرگس، گل اور یاسمن گنوا کر پھولوں کی کثرت دکھائی ہے۔",hint:"شعر میں کس چیز کے نام آ رہے ہیں؟"}}
+];
+
+const ORDER_CHUNKS=[
+"شاعر نے اس شعر میں چنبیلی، موتیا، رائے بیل اور موگرا کے نام گنوائے ہیں۔",
+"یہ سب سفید رنگ کے خوشبودار پھول ہیں جو باغ میں جگہ جگہ کھلے ہوئے ہیں۔",
+"«کہیں ... کہیں» کی تکرار سے پتا چلتا ہے کہ باغ بہت وسیع ہے اور ہر طرف پھول ہیں۔",
+"یوں شاعر باغ کی خوشبو اور پھولوں کی کثرت کا دلکش نقشہ ہمارے سامنے رکھ دیتا ہے۔"
+];
+
+const MARKAZI="اس نظم میں شاعر نے باغ کی تیاری اور سجاوٹ کا دلکش نقشہ کھینچا ہے۔ شاہانہ عمارت، زمرد جیسا سبزہ، جواہر جڑی روشیں، طرح طرح کے خوشبودار پھول اور صبح کی نرم ہوا کے ذریعے ایک ایسا حسین منظر بنایا گیا ہے جس میں داستان کا اصل کردار (سرو رواں) جلوہ گر ہوتا ہے۔ نظم کا مرکزی خیال باغ کی خوبصورتی، رنگوں اور خوشبو کی منظر کشی ہے۔";
+const KHULASA="میر حسن اپنی مثنوی «سحر البیان» کے اس حصے میں ساقی سے مئے ارغوانی مانگ کر باغ کی تعمیر کا حال بیان کرنا شروع کرتے ہیں۔ وہ بتاتے ہیں کہ باغ کی عمارت پر زربفت کے سائبان لگے تھے، سبزہ زمرد کی طرح اور روشیں جواہر کی طرح چمکتی تھیں۔ باغ میں نرگس، یاسمن، چنبیلی، موتیا، رائے بیل، موگرا، ارغواں اور لالہ زار کھلے تھے اور ہر پھول اپنے موسم میں بہار دکھاتا تھا۔ صبا خراماں چلتی ہوئی خوشبو پھیلاتی اور مولسری کے پھول بکھیرتی جاتی تھی۔ ان پھولوں سے منظر دگنا حسین ہو گیا اور اسی باغ میں وہ سرو رواں موجود تھا۔";
+
+const MCQ=[
+{q:"پہلے شعر میں شاعر نے ساقی سے کیا مانگا؟",opts:["ارغوانی مئے (جوش و سرور کے لیے)","باغ کا نقشہ","زربفت کا کپڑا","پھولوں کا گلدستہ"],a:0,why:"شاعر مئے ارغوانی پی کر باغ کا حال بیان کرنے کا جوش حاصل کرتا ہے۔",hint:"پہلے مصرع کے الفاظ پڑھیں۔"},
+{q:"«زمرد کے مانند سبزے کا رنگ» میں سبزے کو کس سے مشابہت دی گئی ہے؟",opts:["زمرد سے","سونے سے","پانی سے","مٹی سے"],a:0,why:"زمرد سبز قیمتی پتھر ہے، سبزہ بھی گہرا اور چمکدار ہے۔",hint:"«مانند» کا مطلب سوچیں۔"},
+{q:"«کہیں ... کہیں» بار بار آنے سے شعر میں کیا خوبی پیدا ہوئی؟",opts:["باغ کی وسعت اور رنگا رنگی کا احساس","شعر مختصر ہو گیا","قافیہ بدل گیا","غم کی کیفیت پیدا ہوئی"],a:0,why:"ہر «کہیں» ایک نئی جگہ اور نئے پھول کی طرف نظر لے جاتا ہے۔",hint:"سوچیں «کہیں» کا مطلب کیا ہے: ایک جگہ یا کئی جگہیں؟"},
+{q:"«جدی اپنے موسم میں سب کی بہار» کا مطلب کیا ہے؟",opts:["ہر پھول کی بہار اپنے الگ موسم میں آتی ہے","سب پھول ایک ہی دن کھلتے ہیں","بہار کبھی نہیں آتی","پھول صرف سردی میں کھلتے ہیں"],a:0,why:"«جدی» کا مطلب الگ ہے، یعنی ہر پھول کا موسم الگ ہے۔",hint:"«جدی» کے معنی دیکھیں۔"},
+{q:"نویں شعر میں صبا نے کیا کیا؟",opts:["پھولوں کی ڈھیریاں لگا کر جیسے بھول گئی","باغ سے سارے پھول اٹھا لیے","پھولوں کو پانی دیا","درخت گرا دیے"],a:0,why:"شاعر نے ہوا کو انسان کی طرح بھولنے والا دکھایا ہے۔",hint:"دوسرے مصرع میں پھول کہاں پڑے ہیں؟"},
+{q:"«سرو رواں» سے مراد کیا ہے؟",opts:["سرو جیسی بلند قامت، خوبصورت چلتی پھرتی ہستی","ایک بہتی ہوئی نہر","ایک سوکھا درخت","باغ کا مالی"],a:0,why:"سرو سیدھا اور لمبا درخت ہے؛ شاعر اس سے بلند قامت حسین ہستی کو تشبیہ دیتا ہے۔",hint:"سرو کا درخت کیسا ہوتا ہے؟"},
+{q:"پوری نظم کا مجموعی ماحول کیسا ہے؟",opts:["دلکش، خوشبو اور رنگوں سے بھرا ہوا","خوف اور اندھیرے والا","جنگ اور شور والا","اداسی اور تنہائی والا"],a:0,why:"ہر شعر میں باغ، پھول، خوشبو اور ہوا کا حسن بیان ہوا ہے۔",hint:"نظم میں کون کون سی چیزیں بیان ہوئی ہیں؟"}
+];
+
+const TF=[
+{s:"شاعر نے باغ میں صرف ایک ہی قسم کے پھول بیان کیے ہیں۔",t:false,y:"نرگس، یاسمن، چنبیلی، موتیا، موگرا، ارغواں اور لالہ کئی پھولوں کا ذکر ہے۔",r:["کیونکہ نظم میں کئی پھولوں کے نام آئے ہیں","کیونکہ نظم میں پھولوں کا ذکر ہی نہیں"]},
+{s:"نظم میں صبا کو ایک زندہ انسان کی طرح چلتے پھرتے اور بھولتے دکھایا گیا ہے۔",t:true,y:"صبا «خراماں» ہے اور «ڈھیریاں کر کے بھول» جاتی ہے، یہ تشخیص ہے۔",r:["کیونکہ صبا «خراماں» ہے اور ڈھیریاں کر کے بھول جاتی ہے","کیونکہ شاعر نے صبا کو پتھر کہا ہے"]},
+{s:"«سرو رواں» کا مطلب ایسا درخت ہے جو سچ مچ چل رہا ہو۔",t:false,y:"یہ تشبیہ/استعارہ ہے: سرو جیسی بلند قامت حسین ہستی۔",r:["کیونکہ اس سے سرو جیسی بلند قامت خوبصورت ہستی مراد ہے","کیونکہ شاعر نے درخت کے چلنے کا واقعہ لکھا ہے"]},
+{s:"مثنوی کے ہر شعر کے دونوں مصرعے ہم قافیہ ہوتے ہیں۔",t:true,y:"جیسے ساقیا/چلا، رنگ/سنگ، چمن/یاسمن۔",r:["کیونکہ ہر شعر میں دونوں مصرعوں کا قافیہ ملتا ہے","کیونکہ ہر شعر کا قافیہ پچھلے شعر جیسا ہوتا ہے"]},
+{s:"شاعر نے باغ کی شان دکھانے کے لیے زمرد، جواہر اور زربفت جیسی قیمتی چیزوں کی مثالیں دی ہیں۔",t:true,y:"سبزہ زمرد جیسا، روشوں پر جواہر اور عمارت پر زربفت کے سائبان ہیں۔",r:["کیونکہ سبزے کو زمرد اور روشوں کو جواہر سے ملایا ہے","کیونکہ شاعر نے صرف مٹی کا ذکر کیا ہے"]},
+{s:"اس نظم کا مرکزی خیال جنگ اور بہادری کا بیان ہے۔",t:false,y:"نظم باغ کی خوبصورتی، پھولوں اور خوشبو کی منظر کشی ہے۔",r:["کیونکہ نظم میں باغ، پھول، خوشبو اور ہوا کا بیان ہے","کیونکہ نظم میں تلواروں کا ذکر ہے"]},
+{s:"شاعر کے مطابق سب پھول ایک ہی موسم میں کھلتے ہیں۔",t:false,y:"«جدی اپنے موسم میں سب کی بہار» یعنی ہر پھول کا موسم الگ ہے۔",r:["کیونکہ شاعر نے لکھا ہے: جدی اپنے موسم میں سب کی بہار","کیونکہ شاعر نے لکھا ہے کہ سب ایک ساتھ کھلتے ہیں"]},
+{s:"شاعر نے مولسری کے پھولوں کے بکھرنے کو ہوا کی بھول سے جوڑ کر خوبصورتی سے بیان کیا ہے۔",t:true,y:"ہوا ڈھیریاں کر کے بھول گئی، اس لیے پھول ہر طرف پڑے ہیں؛ یہ دلکش تخیل ہے۔",r:["کیونکہ ہوا کو بھولنے والے انسان جیسا دکھایا گیا ہے","کیونکہ شاعر نے پھولوں کے بارے میں کچھ نہیں لکھا"]}
+];
+
+const SORT_BUCKETS=[
+ {id:'f',e:'🌸',t:'پھولوں کے نام',s:'باغ میں کھلنے والے پھول'},
+ {id:'t',e:'🔗',t:'تشبیہ',s:'«کے مانند / جیسے» والی مثال'},
+ {id:'s',e:'🍃',t:'صبا اور خوشبو',s:'ہوا کا کردار اور مہک'},
+ {id:'i',e:'🏛️',t:'عمارت کی شان',s:'سجاوٹ اور شان و شوکت'}
+];
+const SORT_ITEMS=[
+ ["نرگس","f"],["یاسمن","f"],["موگرا","f"],["لالہ زار","f"],["رائے بیل","f"],["چنبیلی","f"],
+ ["زمرد کے مانند سبزے کا رنگ","t"],["جواہر لگے جیسے سنگ","t"],
+ ["خراماں صبا","s"],["ڈھیریاں کر کے بھول گئی","s"],["دماغوں کو گل کی بو دینا","s"],["ہوا کے سبب باغ مہکا ہوا","s"],
+ ["زربفت کے سائبان","i"],["عمارت کی خوبی","i"],["دروں کی شان","i"]
+];
+const SENSE=[
+ ["زمرد کے مانند سبزے کا رنگ",0,"رنگ آنکھ سے دیکھا جاتا ہے۔"],
+ ["دماغوں کو دیتی ہر اک گل کی بو",1,"بو ناک سے سونگھی جاتی ہے۔"],
+ ["خراماں صبا صحن میں چار سو",2,"ٹھنڈی ہوا کو ہم جلد پر محسوس کرتے ہیں۔"],
+ ["کہیں ارغواں اور کہیں لالہ زار",0,"پھولوں کے رنگ دیکھنے کی حس سے تعلق رکھتے ہیں۔"],
+ ["ہوا کے سبب باغ مہکا ہوا",1,"مہکنا خوشبو سونگھنے سے متعلق ہے۔"],
+ ["لگے جس میں زربفت کے سائبان",0,"سنہری سائبان دیکھنے کی چیز ہیں۔"]
+];
+
+const CLUES=[
+ {s:2,line:"لگے جس میں زربفت کے سائبان",q:"عمارت پر کیا لگانا ہے؟",o:[["🪙","سنہری زربفت کا سائبان",1],["📦","لکڑی کا پرانا ڈبہ",0],["🌂","پلاسٹک کی چھتری",0]],ok:"عمارت پر زربفت کا سنہری سائبان سج گیا!"},
+ {s:3,line:"زمرد کے مانند سبزے کا رنگ",q:"باغ کی گھاس کا رنگ کیسا ہوگا؟",o:[["🟢","گہرا زمردی سبزہ",1],["🟡","سوکھی پیلی گھاس",0],["🟤","بھورا مٹی کا فرش",0]],ok:"سبزہ زمرد کی طرح چمک اٹھا!"},
+ {s:3,line:"روش پر جواہر لگے جیسے سنگ",q:"باغ کی روش پر کیا جڑنا ہے؟",o:[["💎","رنگ برنگے جواہر",1],["🪨","سادہ مٹیالا پتھر",0],["🍂","سوکھے پتے",0]],ok:"روش پر جواہر جگمگانے لگے!"},
+ {s:4,line:"کہیں نرگس و گل کہیں یاسمن",q:"کیاری میں کون سے پھول لگانے ہیں؟",o:[["🌼","نرگس اور یاسمن کے پھول",1],["🌵","کانٹوں والا کیکٹس",0],["🍄","جنگلی کھمبیاں",0]],ok:"نرگس کی کیاری کھل اٹھی!"},
+ {s:5,line:"چنبیلی کہیں اور کہیں موتیا",q:"دوسری طرف کون سی جھاڑی لگانی ہے؟",o:[["🤍","سفید خوشبودار پھول (چنبیلی، موتیا)",1],["🌻","سورج مکھی کا کھیت",0],["🥕","گاجر کی کیاری",0]],ok:"چنبیلی اور موتیا مہکنے لگے!"},
+ {s:6,line:"کہیں ارغواں اور کہیں لالہ زار",q:"پچھلی قطار میں کیا کھلے گا؟",o:[["🌷","سرخ لالہ زار",1],["🌾","گندم کا کھیت",0],["🌳","سادہ سبز جھاڑی",0]],ok:"لالہ زار نے باغ کو سرخ کر دیا!"},
+ {s:7,line:"خراماں صبا صحن میں چار سو",q:"صحن میں کیا چلنا چاہیے؟",o:[["🍃","نرم ٹھنڈی صبا کے جھونکے",1],["🌪️","تیز آندھی",0],["🔥","گرم لو",0]],ok:"صبا خراماں خراماں چلنے لگی!"},
+ {s:9,line:"پڑے ہر طرف مولسریوں کے پھول",q:"زمین پر کیا بکھرا ہوا ہوگا؟",o:[["💮","مولسری کے سفید پھول",1],["🍂","سوکھے پتوں کا ڈھیر",0],["🗑️","کچرے کا ڈھیر",0]],ok:"مولسری کے پھول ہر طرف بکھر گئے!"},
+ {s:10,line:"اسی باغ میں تھا وہ سرو رواں",q:"باغ میں آخری مہمان درخت کون سا ہے؟",o:[["🌲","بلند قامت سرو",1],["🌴","کھجور کا پیڑ",0],["🪴","چھوٹا گملا",0]],ok:"سرو بلند قامت ہو کر جھوم اٹھا — باغ مکمل!"}
+];
+
+const POEM_WORDS=["چمن","صبا","خراماں","مہکا","سماں","دو بالا","چار سو","جدی","بہار","روش","نرگس","موتیا","موگرا","سرو","زمرد","جواہر","لالہ","یاسمن","چنبیلی","مولسری","زربفت","سائبان","ڈھیریاں"];
+const SENT_WORDS=["مہکا ہوا","خراماں","دو بالا","سماں","جدی"];
+const RATE_ITEMS=[
+ "میں نظم کے مشکل الفاظ کے معنی بتا سکتا/سکتی ہوں",
+ "میں ہر شعر کی تشریح اپنے لفظوں میں لکھ سکتا/سکتی ہوں",
+ "میں نظم کا مرکزی خیال اور خلاصہ لکھ سکتا/سکتی ہوں",
+ "میں تشبیہ، منظر کشی اور قافیہ پہچان سکتا/سکتی ہوں"
+];
+
+/* ================= HELPERS ================= */
+const $=(s,r=document)=>r.querySelector(s);
+const $$=(s,r=document)=>[...r.querySelectorAll(s)];
+function h(tag,attrs,...kids){const e=document.createElement(tag);for(const k in (attrs||{})){const v=attrs[k];if(v===false||v==null)continue;if(k==='class')e.className=v;else if(k==='html')e.innerHTML=v;else if(k==='dataset')Object.assign(e.dataset,v);else if(k.slice(0,2)==='on')e.addEventListener(k.slice(2),v);else if(v===true)e.setAttribute(k,'');else e.setAttribute(k,v)}kids.flat(2).forEach(c=>{if(c==null||c===false)return;e.append(c.nodeType?c:document.createTextNode(c))});return e}
+const shuffle=a=>{a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+const norm=s=>s.replace(/[ً-ْٰٔ]/g,'').replace(/[«»،۔؟!.,:؛()]/g,'').trim();
+const UD='۰۱۲۳۴۵۶۷۸۹';const ud=n=>String(n).replace(/\d/g,d=>UD[d]);
+const B={};
+
+/* ================= STATE ================= */
+const S={pts:0,done:{},stars:{},mode:'solo',help:true,mute:false,name:'',fav:-1,favWhy:'',story:''};
+const ST=[
+{id:'poem',ico:'📜',t:'شعر خوانی',s:'نظم پڑھیں اور لفظوں کو چھو کر معنی دیکھیں',b:'یاد کریں'},
+{id:'words',ico:'💎',t:'لفظوں کا خزانہ',s:'کارڈ پلٹیں اور معنی و مثال جانیں',b:'یاد کریں'},
+{id:'match',ico:'🧩',t:'معنی جوڑی',s:'لفظ اور معنی ملا کر زمین پر پھول اگائیں',b:'سمجھیں'},
+{id:'tash',ico:'✍️',t:'تشریح ورکشاپ',s:'شعر کو قدم بہ قدم کھولنا سیکھیں',b:'سمجھیں'},
+{id:'garden',ico:'🌳',t:'باغ بناؤ',s:'شعر پڑھ کر ویران جگہ کو شاہی باغ بنائیں',b:'اطلاق'},
+{id:'sort',ico:'🔍',t:'چھانٹو اور پرکھو',s:'اشعار کے حصے الگ کریں اور حواس پہچانیں',b:'تجزیہ'},
+{id:'quiz',ico:'🎯',t:'ذہانت کا میدان',s:'سوچ کر درست جواب منتخب کریں',b:'سمجھیں اور پرکھیں'},
+{id:'judge',ico:'⚖️',t:'فیصلہ کریں',s:'دلیل کے ساتھ رائے دیں اور پسندیدہ شعر چنیں',b:'جانچیں'},
+{id:'create',ico:'🎨',t:'میرا باغ، میری تحریر',s:'اپنی منظر کشی تخلیق کریں',b:'تخلیق کریں'},
+{id:'ws',ico:'📝',t:'میری ورک شیٹ',s:'لکھیں، محفوظ کریں اور جمع کروائیں',b:'تخلیق کریں'}
+];
+const STM=Object.fromEntries(ST.map(x=>[x.id,x]));
+
+/* ================= FX ================= */
+let AC;
+function beep(f,d,t,v){if(S.mute)return;try{AC=AC||new (window.AudioContext||window.webkitAudioContext)();const o=AC.createOscillator(),g=AC.createGain();o.type=t||'sine';o.frequency.value=f;g.gain.value=v||.07;o.connect(g);g.connect(AC.destination);o.start();g.gain.exponentialRampToValueAtTime(.0001,AC.currentTime+d);o.stop(AC.currentTime+d)}catch(e){}}
+const sfx={ok(){beep(660,.15);setTimeout(()=>beep(880,.2),110)},bad(){beep(190,.25,'sawtooth',.04)},win(){[523,659,784,1046].forEach((f,i)=>setTimeout(()=>beep(f,.28),i*130))},tap(){beep(520,.05)}};
+function toast(m){const t=h('div',{class:'toast'},m);document.body.append(t);setTimeout(()=>t.remove(),2300)}
+function confetti(){const c=h('div',{class:'confetti'});const em=['🌸','🌼','🌷','💮','✨','🍃','🌺'];for(let i=0;i<44;i++){const s=h('span',{},em[i%em.length]);s.style.left=Math.random()*100+'%';s.style.fontSize=(16+Math.random()*22)+'px';s.style.animationDelay=(Math.random()*1.2)+'s';s.style.animationDuration=(2.6+Math.random()*2)+'s';c.append(s)}document.body.append(c);setTimeout(()=>c.remove(),5600)}
+let bt;function bubble(html){const b=$('#bubble');b.innerHTML=html;b.classList.add('show');clearTimeout(bt);bt=setTimeout(()=>b.classList.remove('show'),5200)}
+function addPts(n){n=Math.max(1,Math.round(n*(S.help?1:2)));S.pts+=n;$('#pts').textContent=ud(S.pts);return n}
+function starsFrom(m,a,b){return m<=a?3:(m<=b?2:1)}
+function finish(id,stars){const first=!S.done[id];S.done[id]=1;S.stars[id]=Math.max(S.stars[id]||0,stars);if(first){sfx.win();confetti();toast('پڑاؤ مکمل! '+'⭐'.repeat(stars))}refresh()}
+function refresh(){
+ ST.forEach(s=>{const b=$('#nav [data-id="'+s.id+'"]');if(b)b.classList.toggle('ck',!!S.done[s.id]);const c=$('#st-'+s.id);if(c){c.classList.toggle('done',!!S.done[s.id]);$('.stars',c).textContent=S.done[s.id]?'⭐'.repeat(S.stars[s.id]||1):'☆☆☆'}});
+ const all=ST.slice(0,-1).every(s=>S.done[s.id]);const f=$('#fin');if(f)f.style.display=all?'block':'none';
+}
+
+/* ================= SHARED UI ================= */
+function shead(id){const s=STM[id];return h('div',{class:'shead'},h('div',{class:'badge'},s.ico),h('div',{},h('h2',{},s.t),h('p',{},'ذہنی درجہ: '+s.b+' — '+s.s)))}
+function nextBar(id){const i=ST.findIndex(x=>x.id===id);const n=ST[i+1];return h('div',{class:'nextbar noprint'},n?h('button',{class:'btn gold big',onclick:()=>go(n.id)},'اگلا پڑاؤ: '+n.t+' ←'):h('button',{class:'btn gold big',onclick:()=>go('home')},'نقشے پر واپس'))}
+function gate(inner,msg){
+ if(S.mode!=='pair')return inner;
+ const box=h('div',{});inner.hidden=true;
+ const t=h('div',{class:'talk'},'🗣️ جوڑی کا وقت: '+(msg||'پہلے اپنے ساتھی سے مشورہ کریں کہ آپ کا جواب کیوں درست ہے، پھر جواب منتخب کریں۔'));
+ const b=h('button',{class:'btn plum',onclick:()=>{inner.hidden=false;t.remove();b.remove()}},'ہم نے مشورہ کر لیا ✔');
+ box.append(t,b,inner);return box}
+function hintBtn(txt,onUse){
+ if(!S.help)return null;
+ const out=h('div',{class:'fb'});
+ const b=h('button',{class:'btn ghost',onclick:()=>{out.innerHTML='💡 '+txt;b.disabled=true;onUse&&onUse()}},'💡 اشارہ');
+ return h('div',{},b,out)}
+function tabs(defs){ // defs:[[label,paneEl]]
+ const bar=h('div',{class:'tabs'});const wrap=h('div',{});
+ defs.forEach(([l,p],i)=>{const b=h('button',{class:'tab'+(i?'':' on'),onclick:()=>{$$('.tab',bar).forEach(x=>x.classList.remove('on'));b.classList.add('on');defs.forEach(d=>d[1].hidden=true);p.hidden=false}},l);p.hidden=!!i;p.classList.add('pane');bar.append(b);wrap.append(p)});
+ return h('div',{},bar,wrap)}
+function mcq(q,o){
+ o=o||{};const order=shuffle(q.opts.map((t,i)=>i));let tries=0,hints=0,solved=false;
+ const box=h('div',{});
+ box.append(h('div',{class:'qq'},q.q));
+ const qo=h('div',{class:'qo'});const fb=h('div',{class:'fb'});
+ order.forEach(i=>{const b=h('button',{class:'opt'},q.opts[i]);b.onclick=()=>{
+  if(solved)return;
+  if(i===q.a){solved=true;b.classList.add('ok');$$('.opt',qo).forEach(x=>x.disabled=true);fb.innerHTML='<span class="good">✅ بہت خوب!</span> '+q.why;sfx.ok();const p=addPts(Math.max(2,10-tries*3-hints*2));o.onDone&&o.onDone({tries,hints,pts:p})}
+  else{tries++;b.classList.add('bad');b.disabled=true;sfx.bad();fb.innerHTML='<span class="badmsg">❌ ابھی نہیں۔ ایک بار پھر سوچیں اور غور سے پڑھیں۔</span>'}};qo.append(b)});
+ box.append(gate(qo),fb);
+ const hb=hintBtn(q.hint,()=>hints++);if(hb)box.append(hb);
+ return box}
+function sherEl(s,n,clickable,onTap){
+ const mk=t=>{const m=h('div',{class:'m'});t.split(' ').forEach(w=>{const k=norm(w);const has=clickable&&DICT[k];const sp=h('span',{class:'tok'+(has?' has':'')},w);if(has)sp.onclick=()=>{const d=DICT[k];sfx.tap();bubble('<b>'+d.w+'</b> : '+d.m+(d.ex?'<div class="bx">مثال: '+d.ex+'</div>':''));onTap&&onTap(d.w)};m.append(sp,' ')});return m};
+ return h('div',{class:'sher'},h('div',{class:'no'},ud(n)),mk(s.a),mk(s.b))}
+function goal(){return h('div',{})}
+
+/* ================= HOME ================= */
+B.home=v=>{
+ const hero=h('div',{class:'hero'});
+ hero.innerHTML=`<svg viewBox="0 0 800 250" style="width:100%;display:block" aria-hidden="true">
+ <defs><linearGradient id="hs" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9ad8f2"/><stop offset="1" stop-color="#fff4d6"/></linearGradient>
+ <linearGradient id="hl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#34b274"/><stop offset="1" stop-color="#0e7a5c"/></linearGradient>
+ <linearGradient id="hg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3d36b"/><stop offset="1" stop-color="#c9962b"/></linearGradient></defs>
+ <rect width="800" height="250" fill="url(#hs)"/><circle cx="110" cy="60" r="34" fill="#ffd96b"/>
+ <g class="cl"><ellipse cx="300" cy="55" rx="50" ry="14" fill="#fff" opacity=".85"/><ellipse cx="330" cy="46" rx="34" ry="12" fill="#fff" opacity=".85"/></g>
+ <path d="M0 170 Q150 120 300 165 T600 150 T800 165 V250 H0z" fill="#8ccaa0"/>
+ <path d="M0 200 Q200 170 400 195 T800 190 V250 H0z" fill="url(#hl)"/>
+ <g transform="translate(400 70)"><path d="M-90 100 Q-90 -20 0 -30 Q90 -20 90 100" fill="none" stroke="#c9962b" stroke-width="12"/><path d="M-70 100 Q-70 -4 0 -12 Q70 -4 70 100" fill="none" stroke="#7a2e6e" stroke-width="5" stroke-dasharray="2 9" stroke-linecap="round"/><path d="M-26 -34 L0 -64 L26 -34z" fill="url(#hg)"/><circle cx="0" cy="-70" r="6" fill="#c9962b"/></g>
+ <path d="M370 250 L430 250 L418 170 L382 170z" fill="#f3ead2"/>
+ <g class="sway"><path d="M200 235 V205" stroke="#2b8a4a" stroke-width="3"/><circle cx="200" cy="198" r="9" fill="#d6283a"/></g>
+ <g class="sway"><path d="M240 238 V210" stroke="#2b8a4a" stroke-width="3"/><circle cx="240" cy="203" r="9" fill="#fff" stroke="#e5d9a8"/><circle cx="240" cy="203" r="3.5" fill="#ffcf33"/></g>
+ <g class="sway"><path d="M560 236 V206" stroke="#2b8a4a" stroke-width="3"/><circle cx="560" cy="199" r="9" fill="#e86aa6"/></g>
+ <g class="sway"><path d="M610 238 V208" stroke="#2b8a4a" stroke-width="3"/><circle cx="610" cy="201" r="9" fill="#fff" stroke="#e5d9a8"/><circle cx="610" cy="201" r="3.5" fill="#ffcf33"/></g>
+ <path d="M690 250 C672 200 672 140 690 90 C708 140 708 200 690 250z" fill="#1d6b45"/><path d="M95 250 C77 200 77 140 95 90 C113 140 113 200 95 250z" fill="#1d6b45"/>
+ </svg>
+ <div class="ttl"><h1>مثنوی سحرالبیان</h1><div class="sub">میر حسن &nbsp;•&nbsp; داستان تیاری میں باغ کی</div></div>
+ <div class="cta"><button class="btn gold big" id="startb">🌸 باغ کا سفر شروع کریں</button></div>`;
+ v.append(hero);
+ const goals=h('div',{class:'card'},h('h3',{},'🎯 آج کے سفر کے اہداف'),
+  h('ul',{class:'goals'},
+   ['نظم کے مشکل الفاظ کے معنی بتائیں گے۔','ہر شعر کا مطلب اپنے لفظوں میں لکھیں گے۔','تشبیہ، منظر کشی اور قافیہ پہچانیں گے۔','نظم کا مرکزی خیال اور خلاصہ لکھیں گے۔','اپنے اسکول کے باغ کی منظر کشی خود تخلیق کریں گے۔'].map(t=>h('li',{},t))));
+ v.append(goals);
+ const nm=h('input',{class:'field',type:'text',placeholder:'اپنا نام یہاں لکھیں',style:'max-width:360px',oninput:e=>{S.name=e.target.value;const w=$('#ws-name');if(w)w.value=S.name}});
+ const mk=(label,opts,key)=>{const row=h('div',{class:'modes'},h('b',{style:'font-weight:normal;color:var(--plum)'},label));opts.forEach(([val,txt])=>{const b=h('button',{class:'btn ghost'+(S[key]===val?' on':''),onclick:()=>{S[key]=val;$$('button',row).forEach(x=>x.classList.remove('on'));b.classList.add('on');if(key==='help')toast(val?'اشارے آن ہیں':'چیلنج موڈ: اشارے بند، پوائنٹ دگنے!')}},txt);row.append(b)});return row};
+ const set=h('div',{class:'card'},h('h3',{},'⚙️ کھیل کی ترتیب'),h('div',{class:'modes'},h('b',{style:'font-weight:normal;color:var(--plum)'},'نام:'),nm),
+  mk('کھیلنے کا انداز:',[['solo','🙋 اکیلے'],['pair','👥 جوڑی میں (پہلے مشورہ پھر جواب)']],'mode'),
+  mk('مدد:',[[true,'💡 اشارے آن'],[false,'🔥 چیلنج (اشارے بند، پوائنٹ دگنے)']],'help'));
+ v.append(set);
+ v.append(h('h3',{class:'mh'},'🗺️ باغ کا نقشہ — دس پڑاؤ'));
+ const map=h('div',{class:'map'});
+ ST.forEach((s,i)=>map.append(h('button',{class:'st',id:'st-'+s.id,onclick:()=>go(s.id)},h('span',{class:'ico'},s.ico),h('b',{},ud(i+1)+'۔ '+s.t),h('small',{},s.s),h('small',{style:'color:var(--plum)'},'درجہ: '+s.b),h('span',{class:'stars'},'☆☆☆'))));
+ v.append(map);
+ v.append(h('div',{class:'card',id:'fin'},h('h3',{},'🏆 مبارک ہو! آپ باغ کے وارث بن گئے'),h('p',{},'اب اپنی ورک شیٹ مکمل کریں، محفوظ کریں اور استاد کو جمع کروائیں۔'),h('button',{class:'btn gold big',onclick:()=>go('ws')},'ورک شیٹ کھولیں 📝')));
+ $('#startb',hero).onclick=()=>go('poem');
+};
+
+/* ================= POEM ================= */
+B.poem=v=>{
+ v.append(shead('poem'));
+ const tapped=new Set();
+ const PRED=[["نرگس اور یاسمن کے پھول",1],["کانٹوں والا کیکٹس",0],["زمرد جیسا سبزہ",1],["زربفت کے سائبان",1],["برف سے ڈھکے پہاڑ",0],["صبح کی نرم ہوا",1],["جواہر جڑی روشیں",1],["اونٹوں کا قافلہ",0]];
+ const preSel=new Set();
+ const pre=h('div',{class:'card'},h('h3',{},'🔮 پہلے اندازہ لگائیں'),h('p',{},'آنکھیں بند کریں اور ایک شاہی باغ کا تصور کریں۔ آپ کے خیال میں شاعر نے اپنی نظم میں کیا کیا بیان کیا ہوگا؟ (کم از کم تین چیزیں چنیں)'));
+ const pc=h('div',{class:'chips'});
+ PRED.forEach(([t,ok],i)=>pc.append(h('button',{class:'chip',onclick:e=>{e.target.classList.toggle('sel');preSel.has(i)?preSel.delete(i):preSel.add(i)}},t)));
+ pre.append(pc);v.append(pre);
+ const info=tabs([
+  ['👤 شاعر',h('div',{class:'card poet'},h('div',{class:'av'},'🖋️'),h('div',{},h('b',{style:'font-weight:normal;color:var(--plum)'},'میر غلام حسن (میر حسن)'),h('p',{},'اردو کے عظیم مثنوی نگار تھے۔ دہلی سے لکھنؤ آئے اور وہیں ۱۷۸۶ء میں ان کا انتقال ہوا۔ ان کی سب سے مشہور مثنوی «سحرالبیان» ہے۔')))],
+  ['📖 مثنوی کیا ہے؟',h('div',{class:'card'},h('p',{},'مثنوی وہ نظم ہے جس کے ہر شعر کے دونوں مصرعے ہم قافیہ ہوتے ہیں، مگر ہر شعر کا قافیہ الگ ہوتا ہے۔ اسی لیے لمبی کہانیاں مثنوی میں لکھی جاتی ہیں۔'),h('p',{},'مثال اسی نظم سے: «ساقیا / چلا»، «شان / سائبان»، «رنگ / سنگ»۔'))],
+  ['🏰 کہانی',h('div',{class:'card'},h('p',{},'«سحرالبیان» شہزادہ بے نظیر اور شہزادی بدر منیر کی داستان ہے۔ ہماری نظم میں شاعر کہانی کے ایک خوبصورت باغ کی تیاری اور سجاوٹ کا حال بیان کرتا ہے۔'))]
+ ]);
+ v.append(info);
+ v.append(h('div',{class:'talk'},'👆 ہدایت: ہر شعر کو بلند آواز سے پڑھیں۔ نیچے نقطہ دار لکیر والے لفظ پر ٹیپ کریں تو اس کے معنی اور مثال سامنے آ جائے گی۔'));
+ const cnt=h('span',{},'۰');
+ const done=h('button',{class:'btn gold big',disabled:true,onclick:()=>{
+  const res=h('div',{class:'card'},h('h3',{},'🔎 آپ کے اندازے کیسے رہے؟'));const rc=h('div',{class:'chips'});let hit=0;
+  PRED.forEach(([t,ok],i)=>{if(preSel.has(i)){if(ok)hit++;rc.append(h('span',{class:'chip '+(ok?'right':'wrong')},(ok?'✅ ':'❌ ')+t))}});
+  res.append(rc,h('p',{},hit+' اندازے نظم میں ملے! جو چیز نظم میں نہیں تھی اس کے بارے میں سوچیں: شاعر نے اس باغ کو کس مزاج کا دکھایا ہے؟'));
+  poemWrap.append(res);done.disabled=true;addPts(10);finish('poem',starsFrom(preSel.size-hit,1,3));poemWrap.append(nextBar('poem'));res.scrollIntoView({behavior:'smooth'})}},'✅ میں نے نظم پڑھ لی');
+ const poemWrap=h('div',{});
+ poemWrap.append(h('div',{class:'card',style:'text-align:center'},h('h3',{},'مثنوی سحرالبیان — میر حسن'),h('p',{style:'color:var(--em2)'},'(داستان تیاری میں باغ کی)')));
+ ASHAAR.forEach((s,i)=>poemWrap.append(sherEl(s,i+1,true,w=>{tapped.add(w);cnt.textContent=ud(tapped.size);if(tapped.size>=6&&!S.done.poem)done.disabled=false})));
+ poemWrap.append(h('div',{class:'card',style:'text-align:center'},h('p',{},'لفظ چھوئے: ',cnt,' / ۶ (کم از کم ۶ الفاظ کے معنی دیکھیں)'),done));
+ v.append(poemWrap);
+};
+
+/* ================= WORDS (flip cards) ================= */
+B.words=v=>{
+ v.append(shead('words'));
+ v.append(h('div',{class:'talk'},'🃏 ہر کارڈ پر ٹیپ کریں۔ پہلے ذہن میں معنی سوچیں، پھر کارڈ پلٹ کر جانچیں۔ کم از کم ۱۲ کارڈ پلٹیں!'));
+ let flipped=new Set();const cnt=h('b',{},'۰');
+ const g=h('div',{class:'fgrid'});
+ WORDS.forEach((x,i)=>{const c=h('div',{class:'fc',tabindex:0,role:'button'},h('div',{class:'in'},h('div',{class:'f'},x.w,h('small',{},'ٹیپ کریں')),h('div',{class:'b'},h('b',{},x.w),h('div',{},x.m),x.ex?h('div',{class:'ex'},'مثال: '+x.ex):null)));
+  const go_=()=>{c.classList.toggle('flip');sfx.tap();if(!flipped.has(i)){flipped.add(i);cnt.textContent=ud(flipped.size);if(flipped.size===12){addPts(15);finish('words',3)}}};
+  c.onclick=go_;c.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go_()}};g.append(c)});
+ v.append(h('div',{class:'card',style:'text-align:center'},h('p',{},'پلٹے ہوئے کارڈ: ',cnt,' / ۱۲')));
+ v.append(g,nextBar('words'));
+};
+
+/* ================= MATCH ================= */
+B.match=v=>{
+ v.append(shead('match'));
+ v.append(h('div',{class:'talk'},'🧩 ایک لفظ چنیں، پھر اس کا درست معنی چنیں۔ ہر درست جوڑی سے زمین پر ایک پھول اگے گا! غلطی پر کارڈ ہلے گا۔'));
+ const pool=shuffle(WORDS.filter(x=>x.w.indexOf('،')<0));
+ let round=0;const stage=h('div',{});v.append(stage);v.append(nextBar('match'));
+ function deal(){
+  stage.innerHTML='';const items=pool.slice(round*8,round*8+8);let selW=null,selM=null,mis=0,left=items.length,hints=0;
+  if(items.length<8){round=0;return deal()}
+  const wc=h('div',{class:'col'}),mc=h('div',{class:'col'});const ground=h('div',{class:'ground'});
+  const wt=items.map((x,i)=>{const t=h('button',{class:'tile',dataset:{i}},x.w);return t}),
+        mt=shuffle(items.map((x,i)=>i)).map(i=>h('button',{class:'tile long',dataset:{i}},items[i].m));
+  wt.forEach(t=>wc.append(t));mt.forEach(t=>mc.append(t));
+  const clearSel=()=>{[selW,selM].forEach(t=>t&&t.classList.remove('sel'));selW=selM=null};
+  const check=()=>{
+   if(!selW||!selM)return;
+   if(selW.dataset.i===selM.dataset.i){[selW,selM].forEach(t=>{t.classList.remove('sel');t.classList.add('done');t.disabled=true});sfx.ok();addPts(5);const f=['🌸','🌼','🌷','🌺','💮','🌻','🏵️','🌹'][8-left];ground.append(h('span',{},f));left--;selW=selM=null;
+    if(!left){confetti();const st=starsFrom(mis,2,5);finish('match',st);stage.append(h('div',{class:'card',style:'text-align:center'},h('h3',{},'🎉 شاندار! آپ نے ۸ جوڑیاں ملا لیں'),h('p',{},'غلطیاں: '+ud(mis)),h('button',{class:'btn plum',onclick:()=>{round++;deal()}},'🔁 نیا راؤنڈ (نئے الفاظ)')))}}
+   else{mis++;sfx.bad();[selW,selM].forEach(t=>{t.classList.add('shake');setTimeout(()=>t.classList.remove('shake'),450)});clearSel()}};
+  wt.forEach(t=>t.onclick=()=>{if(t.disabled)return;sfx.tap();selW&&selW.classList.remove('sel');selW=t;t.classList.add('sel');check()});
+  mt.forEach(t=>t.onclick=()=>{if(t.disabled)return;sfx.tap();selM&&selM.classList.remove('sel');selM=t;t.classList.add('sel');check()});
+  stage.append(h('div',{class:'mg'},wc,mc),ground);
+  if(S.help)stage.append(h('div',{class:'row-btns'},h('button',{class:'btn ghost',onclick:()=>{if(!selW){toast('پہلے ایک لفظ چنیں');return}const m=mt.find(t=>t.dataset.i===selW.dataset.i);m.classList.add('hint');hints++;setTimeout(()=>m.classList.remove('hint'),1500)}},'💡 اشارہ: درست معنی کو چمکاؤ')));
+ }
+ deal();
+};
+
+/* ================= TASHREEH WORKSHOP ================= */
+B.tash=v=>{
+ v.append(shead('tash'));
+ v.append(h('div',{class:'card'},h('h3',{},'📐 تشریح لکھنے کا فارمولا'),
+  h('div',{class:'pills'},['۱۔ مشکل الفاظ پہچانیں','۲۔ شعر کا مطلب اپنے لفظوں میں','۳۔ شاعر کی خوبی / کیفیت','۴۔ پوری تشریح ترتیب سے لکھیں'].map(t=>h('span',{class:'chip'},t)))));
+ const doneSet=new Set();let chTries=0,sherTries=0,chDone=false;
+ const bar=h('div',{class:'pills'});const area=h('div',{});
+ const names=[...Array(4)].map((_,i)=>'شعر '+ud(i+1));names.push('🧠 ترتیب کا چیلنج');
+ const btns=names.map((n,i)=>{const b=h('button',{class:'tab'+(i?'':' on'),onclick:()=>open(i)},n);bar.append(b);return b});
+ v.append(bar,area);
+ const fin=()=>{if(doneSet.size===4&&chDone){finish('tash',starsFrom(chTries+sherTries,2,6))}};
+ function open(k){
+  btns.forEach((b,i)=>b.classList.toggle('on',i===k));area.innerHTML='';
+  if(k===4)return challenge();
+  const t=TASH[k];area.append(sherEl(ASHAAR[k],k+1,false));
+  const steps=[];const mkStep=(title)=>{const s=h('div',{class:'step'},h('h4',{},title));s.hidden=steps.length>0;steps.push(s);area.append(s);return s};
+  const reveal=n=>{steps[n].hidden=false;steps[n].scrollIntoView({behavior:'smooth',block:'nearest'})};
+  /* قدم ۱ */
+  const s1=mkStep('قدم ۱: مشکل لفظ پر ٹیپ کریں');const box=h('div',{class:'mean',style:'min-height:48px'},'👆 کسی لفظ پر ٹیپ کریں');const seen=new Set();
+  const n1=h('button',{class:'btn',disabled:true,onclick:()=>reveal(1)},'اگلا قدم ←');
+  const ch=h('div',{class:'chips'});t.w.forEach(w=>ch.append(h('button',{class:'chip',onclick:e=>{const d=DICT[w];box.innerHTML='<b style="font-weight:normal;color:var(--plum)">'+d.w+'</b> : '+d.m;e.target.classList.add('sel');seen.add(w);sfx.tap();if(seen.size===t.w.length)n1.disabled=false}},w)));
+  s1.append(ch,box,n1);
+  /* قدم ۲ */
+  const s2=mkStep('قدم ۲: پہلے خود لکھیں، پھر موازنہ کریں');
+  s2.append(gate(h('textarea',{class:'free',rows:2,placeholder:'اس شعر کا مطلب اپنے لفظوں میں لکھیں...'}),'ساتھی کو اپنے لفظوں میں شعر کا مطلب سنائیں۔'));
+  const ans=h('div',{class:'mean',hidden:true},'✔️ نمونہ: '+t.mean);
+  const n2=h('button',{class:'btn',hidden:true,onclick:()=>reveal(2)},'اگلا قدم ←');
+  s2.append(h('div',{class:'row-btns'},h('button',{class:'btn plum',onclick:e=>{ans.hidden=false;n2.hidden=false;e.target.disabled=true;sfx.ok()}},'نمونہ دیکھیں')),ans,n2);
+  /* قدم ۳ */
+  const s3=mkStep('قدم ۳: شاعر نے اس شعر میں کیا کمال دکھایا؟');
+  const n3=h('button',{class:'btn',onclick:()=>reveal(3)},'اگلا قدم ←');
+  s3.append(h('div',{class:'chips'},t.kamal.map(x=>h('span',{class:'chip right'},'✨ '+x))),n3);
+  /* قدم ۴ */
+  const s4=mkStep('قدم ۴: سمجھ کی جانچ');
+  s4.append(mcq(t.chk,{onDone:r=>{sherTries+=r.tries;reveal(4)}}));
+  /* قدم ۵ */
+  const s5=mkStep('قدم ۵: مکمل تشریح — اسی طرح آپ لکھیں گے');
+  const nxt=h('button',{class:'btn gold',onclick:()=>{doneSet.add(k);fin();open(k+1)}},k<3?'اگلا شعر ←':'ترتیب کا چیلنج ←');
+  s5.append(h('div',{class:'full'},FULL[k]),h('div',{class:'row-btns'},nxt));
+  s5.addEventListener('click',()=>{doneSet.add(k);btns[k].classList.add('sel')},{once:true});
+ }
+ function challenge(){
+  area.append(h('div',{class:'card'},h('h3',{},'🧠 چیلنج: شعر ۵ کی تشریح ترتیب دیں'),h('p',{},'نیچے شعر ۵ دیا ہے۔ تشریح کے چار ٹکڑے الٹ پلٹ ہو گئے ہیں۔ انہیں درست ترتیب سے چنیں: پہلے کیا بیان ہوا، پھر کیا، آخر میں نتیجہ کیا؟')));
+  area.append(sherEl(ASHAAR[4],5,false));
+  let next=0;const pool=h('div',{class:'order-pool'}),ans=h('div',{class:'order-ans'});
+  const slots=ORDER_CHUNKS.map((_,i)=>h('div',{class:'slot'},'ٹکڑا '+ud(i+1)));slots.forEach(s=>ans.append(s));
+  shuffle(ORDER_CHUNKS.map((t,i)=>i)).forEach(i=>{const c=h('button',{class:'ochunk'},ORDER_CHUNKS[i]);c.onclick=()=>{
+   if(chDone)return;
+   if(i===next){slots[next].textContent=ORDER_CHUNKS[i];slots[next].classList.add('filled');c.classList.add('used');next++;sfx.ok();addPts(4);
+    if(next===ORDER_CHUNKS.length){chDone=true;confetti();area.append(h('div',{class:'card',style:'text-align:center'},h('h3',{},'🎉 زبردست! تشریح کی ترتیب درست بن گئی'),h('p',{},'اب شعر ۶ تا ۱۰ کی تشریح آپ خود اپنے لفظوں میں لکھیں گے۔ اس کے لیے ورک شیٹ کھولیں۔'),h('button',{class:'btn gold',onclick:()=>go('ws')},'ورک شیٹ میں لکھیں 📝')),nextBar('tash'));fin()}}
+   else{chTries++;sfx.bad();c.classList.add('shake');setTimeout(()=>c.classList.remove('shake'),450);toast('ترتیب سوچیں: پہلے کون سی بات آتی ہے؟')}};pool.append(c)});
+  area.append(pool,h('p',{class:'used'},'درست ترتیب یہاں بنتی جائے گی 👇'),ans);
+ }
+ open(0);
+};
+
+/* ================= GARDEN BUILDER ================= */
+function rnd(seed){let s=seed;return()=>((s=(s*9301+49297)%233280)/233280)}
+function SCENE(){
+ const R=rnd(11);
+ const flower=(x,y,sc,pc,cc)=>{const d=(R()*3).toFixed(2);let p='';for(let k=0;k<5;k++)p+=`<ellipse cx="0" cy="-5" rx="3.3" ry="5.2" fill="${pc}" transform="rotate(${k*72})"/>`;return `<g transform="translate(${x.toFixed(0)} ${y.toFixed(0)}) scale(${sc.toFixed(2)})"><g class="sway" style="animation-delay:-${d}s"><path d="M0 0V26" stroke="#2b8a4a" stroke-width="2.4"/>${p}<circle r="3" fill="${cc}"/></g></g>`};
+ const tulip=(x,y,sc,col)=>{const d=(R()*3).toFixed(2);return `<g transform="translate(${x.toFixed(0)} ${y.toFixed(0)}) scale(${sc.toFixed(2)})"><g class="sway" style="animation-delay:-${d}s"><path d="M0 0V26" stroke="#2b8a4a" stroke-width="2.4"/><path d="M-6.5 0Q-9-14 0-18Q9-14 6.5 0Q0 5-6.5 0z" fill="${col}"/><path d="M0-18 L-2 -4 M0 -18 L2 -4" stroke="#00000022" stroke-width="1"/></g></g>`};
+ let c0='',c1='',c2='',c3='',c4='',c5='',c6='',c7='',c8='';
+ /* c0 pavilion + zarbaft canopy */
+ let fr='';for(let i=0;i<14;i++){const x=296+i*15;fr+=`<path d="M${x} 183 l7.5 12 l7.5 -12z" fill="#c9962b" stroke="#8a6414" stroke-width="1"/>`}
+ c0=`<rect x="316" y="180" width="168" height="90" fill="#f6e3b0" stroke="#b58a2a" stroke-width="3"/><rect x="316" y="180" width="168" height="12" fill="#e0c070"/>
+ <path d="M338 270V228A17 17 0 0 1 372 228V270z" fill="#6b3a5b"/><path d="M383 270V228A17 17 0 0 1 417 228V270z" fill="#6b3a5b"/><path d="M428 270V228A17 17 0 0 1 462 228V270z" fill="#6b3a5b"/>
+ <path d="M294 184 Q400 92 506 184z" fill="url(#gold)" stroke="#8a6414" stroke-width="3"/>
+ <path d="M400 112 L330 184 M400 112 L365 184 M400 112 L400 184 M400 112 L435 184 M400 112 L470 184" stroke="#fff6c0" stroke-width="2" opacity=".6"/>${fr}
+ <circle cx="400" cy="110" r="7" fill="#c9962b" stroke="#8a6414" stroke-width="2"/><path d="M400 103V86L416 92L400 98" fill="#d6283a"/>
+ <path d="M294 184 L262 226 L330 226z" fill="url(#gold)" stroke="#8a6414" stroke-width="2" opacity=".95"/><path d="M506 184 L538 226 L470 226z" fill="url(#gold)" stroke="#8a6414" stroke-width="2" opacity=".95"/>`;
+ /* c1 lawn */
+ c1=`<path d="M0 262 Q200 244 400 256 T800 250 V440 H0z" fill="url(#lawn)"/>`;
+ for(let i=0;i<9;i++)c1+=`<ellipse cx="${60+i*90}" cy="${300+(i%3)*45}" rx="70" ry="9" fill="#58c88c" opacity=".28"/>`;
+ /* c2 path with jewels */
+ c2=`<path d="M358 440 L442 440 L426 330 L412 268 L388 268 L374 330z" fill="#f3ead2" stroke="#c9b27a" stroke-width="2"/>`;
+ const gem=['#e0245e','#2a7de1','#18a56a','#f0a30a','#8a3ecb','#14b8c4'];
+ for(let i=0;i<22;i++){const t=R();const y=275+t*160;const half=12+(y-268)/172*40;const x=400+(R()*2-1)*half*.85;c2+=`<path d="M${x.toFixed(0)} ${(y-5).toFixed(0)}l5 5l-5 5l-5 -5z" fill="${gem[i%6]}" stroke="#fff" stroke-width="1"/>`}
+ /* c3 narcissus + jasmine bed */
+ c3=`<ellipse cx="170" cy="372" rx="135" ry="46" fill="#7a5530" opacity=".5"/>`;
+ for(let i=0;i<20;i++){const y=330+R()*52;c3+=flower(48+R()*250,y,.9+(y-330)/110,i%3?'#fff':'#ffe27a',i%3?'#ffcf33':'#ff9d1a')}
+ /* c4 white bushes (chambeli, motia) */
+ c4=`<ellipse cx="610" cy="360" rx="70" ry="38" fill="#2e8b57"/><ellipse cx="690" cy="378" rx="62" ry="34" fill="#25754a"/><ellipse cx="545" cy="385" rx="52" ry="28" fill="#2e8b57"/>`;
+ for(let i=0;i<26;i++){const a=R()*6.28,r=R();const bx=[610,690,545][i%3],by=[360,378,385][i%3];c4+=`<g transform="translate(${(bx+Math.cos(a)*r*55).toFixed(0)} ${(by+Math.sin(a)*r*22-4).toFixed(0)})"><circle r="6" fill="#fff" stroke="#e9e2c8"/><circle r="2.2" fill="#ffd34d"/></g>`}
+ /* c5 tulips (laala zaar) */
+ for(let i=0;i<24;i++){const x=40+i*31+R()*10;if(x>340&&x<460)continue;c5+=tulip(x,282+R()*14,.8+R()*.2,i%4?'#d6283a':'#ee5a2e')}
+ /* c6 breeze */
+ c6=`<g class="bz"><path d="M40 150 q30 -18 60 0 t60 0 t60 0" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".8"/><path d="M520 130 q30 -18 60 0 t60 0 t60 0" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".8"/><path d="M210 100 q30 -16 60 0 t60 0" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".7"/><path d="M80 230 q30 -16 60 0 t60 0 t60 0" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" opacity=".6"/></g>`;
+ /* c7 mulsari petals */
+ for(let i=0;i<46;i++){c7+=`<ellipse transform="translate(${(R()*790).toFixed(0)} ${(290+R()*145).toFixed(0)}) rotate(${(R()*180).toFixed(0)})" rx="5" ry="2.8" fill="#fffdf2" stroke="#e5dcc0" stroke-width=".7"/>`}
+ /* c8 cypress + butterflies */
+ const cy=(x,y,s)=>`<g transform="translate(${x} ${y}) scale(${s})"><rect x="-4" y="-6" width="8" height="30" fill="#6b4a2a"/><path d="M0 0 C-26 -60 -28 -150 0 -240 C28 -150 26 -60 0 0z" fill="#1d6b45"/><path d="M0 0 C-10 -60 -10 -150 0 -240 C14 -150 12 -60 0 0z" fill="#2a8a5a" opacity=".7"/></g>`;
+ c8=cy(100,318,1)+cy(705,330,1.05)+`<g class="bf1"><g transform="translate(220 170)"><g class="wing"><ellipse cx="-8" cy="-3" rx="9" ry="6" fill="#f08a24"/><ellipse cx="8" cy="-3" rx="9" ry="6" fill="#f08a24"/></g><rect x="-1" y="-6" width="2" height="12" fill="#333"/></g></g><g class="bf2"><g transform="translate(560 200)"><g class="wing"><ellipse cx="-8" cy="-3" rx="9" ry="6" fill="#e86aa6"/><ellipse cx="8" cy="-3" rx="9" ry="6" fill="#e86aa6"/></g><rect x="-1" y="-6" width="2" height="12" fill="#333"/></g></g>`;
+ const g=(i,body)=>`<g class="rv" data-c="${i}">${body}</g>`;
+ return `<svg class="scene" viewBox="0 0 800 440" role="img" aria-label="باغ کا منظر جو آپ کے جوابات سے سجتا ہے">
+ <defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8fd0f0"/><stop offset="1" stop-color="#fdf1d0"/></linearGradient>
+ <linearGradient id="lawn" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#34b274"/><stop offset="1" stop-color="#0e7a5c"/></linearGradient>
+ <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6d96b"/><stop offset="1" stop-color="#c9962b"/></linearGradient></defs>
+ <rect width="800" height="440" fill="url(#sky)"/><circle cx="690" cy="70" r="36" fill="#ffd96b"/>
+ <g class="cl"><ellipse cx="170" cy="70" rx="58" ry="16" fill="#fff" opacity=".9"/><ellipse cx="200" cy="58" rx="38" ry="14" fill="#fff" opacity=".9"/></g>
+ <path d="M0 230 Q130 170 260 225 T540 215 T800 230 V300 H0z" fill="#a9cdb3"/>
+ <rect y="250" width="800" height="190" fill="#d6c196"/>
+ <path d="M0 262 Q200 244 400 256 T800 250 V270 H0z" fill="#b9a574" opacity=".5"/>
+ <text x="400" y="360" text-anchor="middle" font-size="26" fill="#8a7440" opacity=".55" class="empt">ویران زمین... آئیں اسے باغ بنائیں</text>
+ ${g(1,c1)}${g(2,c2)}${g(0,c0)}${g(3,c3)}${g(4,c4)}${g(5,c5)}${g(8,c8)}${g(7,c7)}${g(6,c6)}</svg>`;
+}
+B.garden=v=>{
+ v.append(shead('garden'));
+ v.append(h('div',{class:'talk'},'🌳 زمین ویران ہے! شاعر کا ہر شعر ایک ہدایت ہے۔ شعر پڑھیں، دیکھیں شاعر باغ میں کیا لگوانا چاہتا ہے اور درست چیز چنیں۔ ہر درست جواب سے باغ سجتا جائے گا۔'));
+ const wrap=h('div',{class:'scene-wrap build',style:'border-radius:22px;overflow:hidden;border:3px solid var(--gold)'});wrap.innerHTML=SCENE();v.append(wrap);
+ const card=h('div',{class:'card'});v.append(card);
+ let i=0,mis=0;
+ const render=()=>{
+  card.innerHTML='';
+  if(i>=CLUES.length){
+   const st=starsFrom(mis,2,5);
+   card.append(h('div',{class:'result'},h('div',{class:'big'},'🌳🌷🌸🦋'),h('h3',{},'باغ تیار ہے! سبحان اللہ'),h('p',{},'آپ نے شعر کے الفاظ سے پورا منظر بنا لیا۔ یہی منظر کشی ہے!')),
+    h('div',{class:'card'},h('h3',{},'💭 سوچیں اور ساتھی کو بتائیں'),h('p',{},'اگر آپ اپنے اسکول کے باغ میں ایک نئی چیز شامل کریں تو وہ کیا ہوگی اور شاعر اسے ایک مصرع میں کیسے بیان کرتا؟'),h('textarea',{class:'free',rows:2,placeholder:'یہاں لکھیں (اختیاری)...'})),nextBar('garden'));
+   finish('garden',st);return}
+  const c=CLUES[i];
+  card.append(h('div',{class:'qbar'},h('span',{},'ہدایت '+ud(i+1)+' / '+ud(CLUES.length)),h('div',{class:'pb'},h('i',{style:'width:'+(i/CLUES.length*100)+'%'}))));
+  card.append(h('div',{class:'quote'},h('small',{},'شعر نمبر '+ud(c.s)+' کا مصرع'),c.line));
+  card.append(h('div',{class:'qq'},c.q));
+  const go2=h('div',{class:'gopts'});const fb=h('div',{class:'fb'});let solved=false;
+  shuffle(c.o).forEach(([e,t,ok])=>{const b=h('button',{class:'gopt'},h('span',{class:'e'},e),t);b.onclick=()=>{
+   if(solved)return;
+   if(ok){solved=true;b.classList.add('ok');$$('.gopt',go2).forEach(x=>x.disabled=true);sfx.ok();addPts(8);
+    const g=$('[data-c="'+i+'"]',wrap);g&&g.classList.add('on');if(i===8)wrap.classList.add('fly');
+    fb.innerHTML='<span class="good">✅ '+c.ok+'</span>';
+    card.append(h('button',{class:'btn gold qn',onclick:()=>{i++;render()}},i<CLUES.length-1?'اگلی ہدایت ←':'باغ کا نتیجہ ←'))}
+   else{mis++;b.classList.add('bad');b.disabled=true;sfx.bad();fb.innerHTML='<span class="badmsg">❌ یہ شعر کے مطابق نہیں۔ مصرع کو دوبارہ پڑھ کر الفاظ پر غور کریں۔</span>'}};go2.append(b)});
+  card.append(gate(go2,'پہلے ساتھی کے ساتھ شعر کے لفظوں پر بات کریں۔'),fb);
+ };
+ render();
+};
+
+/* ================= SORT & SENSES ================= */
+B.sort=v=>{
+ v.append(shead('sort'));
+ let doneA=false,doneB=false,misA=0,misB=0;
+ const chk=()=>{if(doneA&&doneB)finish('sort',starsFrom(misA+misB,3,8))};
+ /* A */
+ const A=h('div',{});
+ A.append(h('div',{class:'talk'},'🔍 ہر ٹکڑے کو ٹیپ کریں، پھر اس ڈبے پر ٹیپ کریں جس سے وہ تعلق رکھتا ہے۔'));
+ const pool=h('div',{class:'sortpool'});const bk=h('div',{class:'buckets'});let sel=null,left=SORT_ITEMS.length;
+ SORT_BUCKETS.forEach(b=>{const d=h('div',{class:'bucket',tabindex:0,role:'button'},h('h4',{},b.e+' '+b.t),h('small',{},b.s),h('div',{class:'in'}));
+  d.onclick=()=>{if(!sel)return toast('پہلے اوپر سے کوئی ٹکڑا چنیں');
+   if(sel.dataset.b===b.id){$('.in',d).append(h('span',{},sel.textContent));sel.remove();sel=null;left--;sfx.ok();addPts(3);if(!left){doneA=true;confetti();A.append(h('div',{class:'card',style:'text-align:center'},h('h3',{},'🎉 چھانٹی مکمل! اب «حواس کا کھیل» والا ٹیب کھولیں۔')));chk()}}
+   else{misA++;sfx.bad();sel.classList.add('shake');const s=sel;setTimeout(()=>s.classList.remove('shake'),450)}};bk.append(d)});
+ shuffle(SORT_ITEMS).forEach(([t,b])=>{const c=h('button',{class:'sc',dataset:{b}},t);c.onclick=()=>{sfx.tap();sel&&sel.classList.remove('sel');sel=c;c.classList.add('sel')};pool.append(c)});
+ A.append(pool,bk);
+ /* B */
+ const Bp=h('div',{});
+ Bp.append(h('div',{class:'talk'},'👁️👃🖐️ شاعر نے باغ کو صرف دکھایا نہیں، محسوس بھی کروایا ہے! ہر مصرع پڑھ کر بتائیں کہ وہ کس حس سے تعلق رکھتا ہے۔'));
+ let k=0;const bx=h('div',{class:'card'});Bp.append(bx);
+ const SN=[['👁️','دیکھنے کی حس (آنکھ)'],['👃','سونگھنے کی حس (ناک)'],['🖐️','چھونے کی حس (جلد)']];
+ const rb=()=>{bx.innerHTML='';
+  if(k>=SENSE.length){doneB=true;bx.append(h('div',{class:'result'},h('div',{class:'big'},'👁️👃🖐️'),h('h3',{},'شاباش! آپ نے حواس پہچان لیے'),h('p',{},'اچھی منظر کشی وہ ہے جو قاری کے حواس جگا دے۔')));chk();return}
+  bx.append(h('div',{class:'qbar'},h('span',{},'مصرع '+ud(k+1)+' / '+ud(SENSE.length)),h('div',{class:'pb'},h('i',{style:'width:'+(k/SENSE.length*100)+'%'}))));
+  bx.append(h('div',{class:'quote'},SENSE[k][0]));
+  const o=h('div',{class:'gopts'});const fb=h('div',{class:'fb'});let ok_=false;
+  SN.forEach(([e,t],i)=>{const b=h('button',{class:'gopt'},h('span',{class:'e'},e),t);b.onclick=()=>{if(ok_)return;
+   if(i===SENSE[k][1]){ok_=true;b.classList.add('ok');$$('.gopt',o).forEach(x=>x.disabled=true);sfx.ok();addPts(5);fb.innerHTML='<span class="good">✅ درست!</span> '+SENSE[k][2];bx.append(h('button',{class:'btn gold qn',onclick:()=>{k++;rb()}},'اگلا ←'))}
+   else{misB++;b.classList.add('bad');b.disabled=true;sfx.bad();fb.innerHTML='<span class="badmsg">❌ دوبارہ سوچیں: اس مصرع میں شاعر کون سی چیز بیان کر رہا ہے؟</span>'}};o.append(b)});
+  bx.append(gate(o,'ساتھی کے ساتھ سوچیں کہ یہ منظر کس حس سے محسوس ہوتا ہے۔'),fb)};
+ rb();
+ v.append(tabs([['🗂️ چھانٹی',A],['👃 حواس کا کھیل',Bp]]),nextBar('sort'));
+};
+
+/* ================= QUIZ ================= */
+B.quiz=v=>{
+ v.append(shead('quiz'));
+ const card=h('div',{class:'card'});v.append(card);
+ let i=0,mis=0,hints=0;
+ const render=()=>{
+  card.innerHTML='';
+  if(i>=MCQ.length){
+   const st=starsFrom(mis,2,5);
+   card.append(h('div',{class:'result'},h('div',{class:'big'},'⭐'.repeat(st)+'☆'.repeat(3-st)),h('h3',{},st===3?'ماشاءاللہ! آپ نظم کو خوب سمجھ گئے':st===2?'اچھا! تھوڑی سی مزید مشق کافی ہے':'ہمت نہ ہاریں! شعر خوانی کا پڑاؤ دوبارہ دیکھیں'),h('p',{},'غلط کوششیں: '+ud(mis)+' • اشارے: '+ud(hints)),h('button',{class:'btn ghost',onclick:()=>{i=0;mis=0;hints=0;render()}},'🔁 دوبارہ کھیلیں')));
+   finish('quiz',st);return}
+  card.append(h('div',{class:'qbar'},h('span',{},'سوال '+ud(i+1)+' / '+ud(MCQ.length)),h('div',{class:'pb'},h('i',{style:'width:'+(i/MCQ.length*100)+'%'}))));
+  const nx=h('button',{class:'btn gold qn',hidden:true,onclick:()=>{i++;render()}},i<MCQ.length-1?'اگلا سوال ←':'نتیجہ دیکھیں 🏁');
+  card.append(mcq(MCQ[i],{onDone:r=>{mis+=r.tries;hints+=r.hints;nx.hidden=false}}),nx);
+ };
+ render();v.append(nextBar('quiz'));
+};
+
+/* ================= JUDGE ================= */
+B.judge=v=>{
+ v.append(shead('judge'));
+ let tfDone=false,favDone=false,mis=0;
+ const chk=()=>{if(tfDone&&favDone)finish('judge',starsFrom(mis,2,5))};
+ /* بیان */
+ const P1=h('div',{});const box=h('div',{class:'card'});P1.append(box);let i=0;
+ const rt=()=>{
+  box.innerHTML='';
+  if(i>=TF.length){tfDone=true;box.append(h('div',{class:'result'},h('div',{class:'big'},'⚖️'),h('h3',{},'آپ نے سب بیانات پر دلیل کے ساتھ فیصلہ دے دیا!'),h('p',{},'اب «پسندیدہ شعر» والا ٹیب کھول کر اپنی رائے لکھیں۔')));chk();return}
+  const q=TF[i];
+  box.append(h('div',{class:'qbar'},h('span',{},'بیان '+ud(i+1)+' / '+ud(TF.length)),h('div',{class:'pb'},h('i',{style:'width:'+(i/TF.length*100)+'%'}))));
+  box.append(h('div',{class:'qpre'},'یہ بیان صحیح ہے یا غلط؟'),h('div',{class:'quote',style:'font-size:1.1rem'},q.s));
+  const two=h('div',{class:'gopts'});const out=h('div',{});let locked=false;
+  [['✅','صحیح',true],['❌','غلط',false]].forEach(([e,t,val])=>{const b=h('button',{class:'gopt'},h('span',{class:'e'},e),t);b.onclick=()=>{
+   if(locked)return;
+   if(val===q.t){locked=true;b.classList.add('ok');$$('.gopt',two).forEach(x=>x.disabled=true);sfx.ok();
+    out.append(h('div',{class:'mh',style:'font-size:1.05rem'},'اب دلیل منتخب کریں: ایسا کیوں ہے؟'));
+    const ro=h('div',{class:'qo'});let sol=false;
+    shuffle([0,1]).forEach(j=>{const r=h('button',{class:'opt'},q.r[j]);r.onclick=()=>{if(sol)return;
+     if(j===0){sol=true;r.classList.add('ok');$$('.opt',ro).forEach(x=>x.disabled=true);sfx.ok();addPts(8);out.append(h('div',{class:'fb'},h('span',{class:'good'},'✅ شاندار دلیل! '),q.y),h('button',{class:'btn gold qn',onclick:()=>{i++;rt()}},i<TF.length-1?'اگلا بیان ←':'مکمل ←'))}
+     else{mis++;r.classList.add('bad');r.disabled=true;sfx.bad()}};ro.append(r)});
+    out.append(ro)}
+   else{mis++;b.classList.add('bad');b.disabled=true;sfx.bad();out.append(h('div',{class:'fb'},h('span',{class:'badmsg'},'❌ دوبارہ غور کریں۔ '),S.help?'اشارہ: نظم کے متعلقہ شعر کو پھر پڑھیں۔':''))}};two.append(b)});
+  box.append(gate(two,'ساتھی سے بحث کریں: آپ کس بنیاد پر صحیح یا غلط کہہ رہے ہیں؟'),out)};
+ rt();
+ /* پسندیدہ شعر */
+ const P2=h('div',{});
+ P2.append(h('div',{class:'talk'},'⚖️ آپ ناقد ہیں! دس اشعار میں سے وہ شعر چنیں جو آپ کو سب سے زیادہ پسند آیا اور دلیل کے ساتھ بتائیں کہ کیوں۔'));
+ const fg=h('div',{class:'favgrid'});
+ ASHAAR.forEach((s,k)=>{const b=h('button',{class:'favb'+(S.fav===k?' sel':''),onclick:()=>{S.fav=k;$$('.favb',fg).forEach(x=>x.classList.remove('sel'));b.classList.add('sel');sfx.tap()}},'شعر '+ud(k+1)+': '+s.a);fg.append(b)});
+ const fbx=h('div',{class:'fb'});
+ const ta=h('textarea',{class:'free',rows:4,placeholder:'میں نے یہ شعر اس لیے چنا کیونکہ... (دو دلائل: ۱۔ کون سی تصویر یا لفظ پسند آیا؟ ۲۔ پڑھ کر کیا محسوس ہوا؟)',oninput:e=>{S.favWhy=e.target.value}});
+ const sv=h('button',{class:'btn gold',onclick:()=>{
+  if(S.fav<0)return toast('پہلے ایک شعر چنیں');
+  if(S.favWhy.trim().length<25)return toast('دلیل ذرا تفصیل سے لکھیں (کم از کم دو جملے)');
+  favDone=true;addPts(15);sfx.ok();fbx.innerHTML='<span class="good">✅ آپ کی رائے ورک شیٹ میں بھی شامل ہو گئی۔</span>';syncWS();chk()}},'رائے محفوظ کریں ✔');
+ P2.append(fg,h('div',{class:'mh'},'آپ کی دلیل'),ta,h('div',{class:'row-btns'},sv),fbx);
+ v.append(tabs([['⚖️ سچ یا جھوٹ + دلیل',P1],['❤️ پسندیدہ شعر',P2]]),nextBar('judge'));
+};
+
+/* ================= CREATE ================= */
+B.create=v=>{
+ v.append(shead('create'));
+ v.append(h('div',{class:'card'},h('h3',{},'🖋️ آپ کا مشن'),h('p',{},'شاعر کی طرح اپنے اسکول کے باغ (یا گھر کے صحن) کی منظر کشی لکھیں۔ کم از کم ۴ سطریں ہوں، رنگ، خوشبو اور ہوا کا ذکر ہو، اور نیچے دیے گئے الفاظ میں سے کم از کم ۴ لفظ ضرور استعمال کریں۔')));
+ const ta=h('textarea',{class:'free',rows:7,placeholder:'یہاں اپنی منظر کشی لکھیں...',style:'font-size:1.1rem'});
+ const used=h('div',{class:'used'});const pv=h('div',{class:'preview'},'آپ کی تحریر یہاں خوبصورت منظر میں نظر آئے گی ✨');
+ const cnt=()=>POEM_WORDS.filter(w=>ta.value.includes(w));
+ const okb=h('button',{class:'btn gold big',onclick:()=>{
+  const u=cnt();if(u.length<4)return toast('کم از کم ۴ الفاظ استعمال کریں');if(ta.value.trim().length<50)return toast('تحریر ذرا اور بڑھائیں');
+  S.story=ta.value;syncWS();addPts(20);const r=$$('.rubric input',v).filter(x=>x.checked).length;finish('create',r>=3?3:(r>=2?2:1));fb.innerHTML='<span class="good">✅ تحریر ورک شیٹ میں بھی شامل ہو گئی!</span>'}},'✅ تحریر مکمل');
+ const fb=h('div',{class:'fb'});
+ const upd=()=>{const u=cnt();used.innerHTML='استعمال شدہ الفاظ ('+ud(u.length)+' / ۴): '+u.map(w=>'<span class="u">'+w+'</span>').join('');pv.textContent=ta.value||'آپ کی تحریر یہاں خوبصورت منظر میں نظر آئے گی ✨'};
+ ta.addEventListener('input',upd);upd();
+ const chips=h('div',{class:'chips'});POEM_WORDS.forEach(w=>chips.append(h('button',{class:'chip',onclick:()=>{ta.value+=(ta.value&&!/\s$/.test(ta.value)?' ':'')+w+' ';ta.focus();upd();sfx.tap()}},w)));
+ v.append(h('div',{class:'card'},h('div',{class:'mh',style:'margin-top:0'},'🧰 الفاظ کی ٹوکری (ٹیپ کریں تو لفظ لکھ جائے گا)'),chips,ta,used,pv));
+ const rub=h('div',{class:'card rubric'},h('h3',{},'✅ اپنی تحریر خود جانچیں'));
+ ['میں نے کم از کم ایک تشبیہ لکھی (جیسے «...کے مانند»)','میں نے رنگ، خوشبو اور حرکت تینوں کا ذکر کیا','میں نے ہوا یا صبا کو انسان کی طرح پیش کیا','میں نے نظم کے ۴ سے زیادہ الفاظ استعمال کیے'].forEach(t=>rub.append(h('label',{},h('input',{type:'checkbox'}),t)));
+ v.append(rub);
+ v.append(h('div',{class:'card'},h('h3',{},'🤝 دو ستارے اور ایک خواہش'),h('p',{},'اپنی تحریر ساتھی کو سنائیں۔ ساتھی آپ کو دو اچھی باتیں اور ایک مشورہ دے۔'),h('input',{class:'field',type:'text',placeholder:'⭐ ساتھی کو پسند آئی بات'}),h('input',{class:'field',type:'text',style:'margin-top:6px',placeholder:'⭐ ایک اور اچھی بات'}),h('input',{class:'field',type:'text',style:'margin-top:6px',placeholder:'🌠 ایک مشورہ'})));
+ v.append(h('div',{class:'nextbar'},okb),fb,nextBar('create'));
+};
+
+/* ================= WORKSHEET ================= */
+const WSW=["مئے","ارغوانی","دروں","زربفت","سائبان","زمرد","روش","جواہر","نرگس","یاسمن","خراماں","صبا","مولسری","دو بالا","سماں","سرو رواں"];
+const WSQ=[[0,"زمرد کے مانند سبزے کا رنگ"],[2,"زمرد کے مانند سبزے کا رنگ"],[6,"خراماں صبا صحن میں چار سو"],[8,"صبا جو گئی ڈھیریاں کر کے بھول"],[9,"ہوا ان گلوں سے دو بالا سماں"]];
+const WSQI=[0,2,6,8,9];
+const ART=['تشبیہ','تشخیص (بے جان کو جان دار بنانا)','منظر کشی','خطاب','کثرت کا بیان','دولت و شان کا بیان'];
+const RATE_SC=['مدد چاہیے','تھوڑی مدد','خود کر لیتا/لیتی ہوں','دوسروں کو سکھا سکتا/سکتی ہوں'];
+const WSKEY='sb8_ws';
+function autosize(t){t.style.height='auto';t.style.height=(t.scrollHeight+6)+'px'}
+function wsSave(){try{const m={};$$('#doc [data-k]').forEach(e=>{if(e.type==='radio'){if(e.checked)m[e.dataset.k]=e.value}else m[e.dataset.k]=e.value});sessionStorage.setItem(WSKEY,JSON.stringify(m))}catch(e){}}
+function wsLoad(){try{const m=JSON.parse(sessionStorage.getItem(WSKEY)||'{}');$$('#doc [data-k]').forEach(e=>{const val=m[e.dataset.k];if(val==null)return;if(e.type==='radio')e.checked=(e.value===val);else e.value=val})}catch(e){}}
+function syncWS(){
+ const set=(k,val)=>{const e=$('#doc [data-k="'+k+'"]');if(e&&val!=null&&val!==''){e.value=val;e.tagName==='TEXTAREA'&&autosize(e)}};
+ if(S.name)set('name',S.name);
+ if(S.fav>=0)set('favn',String(S.fav));
+ if(S.favWhy)set('favwhy',S.favWhy);
+ if(S.story)set('story',S.story);
+ wsSave();
+}
+B.ws=v=>{
+ v.append(shead('ws'));
+ const btn=(cls,t,fn)=>h('button',{class:'btn '+cls,onclick:fn},t);
+ const dl=()=>{
+  const src=$$('#doc textarea,#doc input,#doc select');const clone=$('#doc').cloneNode(true);const dst=$$('textarea,input,select',clone);
+  src.forEach((s,i)=>{const d=dst[i];if(!d)return;
+   if(s.tagName==='TEXTAREA')d.textContent=s.value;
+   else if(s.tagName==='SELECT'){$$('option',d).forEach((o,j)=>{if(j===s.selectedIndex)o.setAttribute('selected','');else o.removeAttribute('selected')})}
+   else if(s.type==='radio'||s.type==='checkbox'){if(s.checked)d.setAttribute('checked','');else d.removeAttribute('checked')}
+   else d.setAttribute('value',s.value)});
+  const nm=(($('#doc [data-k="name"]')||{}).value||'student').trim().replace(/[\\/:*?"<>|]+/g,'_')||'student';
+  const html='<!doctype html><html lang="ur" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ورک شیٹ - سحرالبیان - '+nm+'</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap"><style>'+$('#css').textContent+'</style></head><body><main class="view active" style="display:block"><div class="ws-actions noprint"><button class="btn" onclick="window.print()">🖨️ پرنٹ / PDF</button></div>'+clone.outerHTML+'</main><script>function a(t){t.style.height="auto";t.style.height=(t.scrollHeight+6)+"px"}document.querySelectorAll("textarea").forEach(function(t){a(t);t.addEventListener("input",function(){a(t)})});<\/script></body></html>';
+  const a=h('a',{href:URL.createObjectURL(new Blob([html],{type:'text/html'})),download:'Worksheet_SehrulBayan_'+(nm.replace(/[^A-Za-z0-9]+/g,'_').replace(/^_+|_+$/g,'')||new Date().toISOString().slice(0,10))+'.html'});document.body.append(a);a.click();a.remove();
+  toast('✅ ورک شیٹ ڈاؤن لوڈ ہو گئی');markWS()};
+ const markWS=()=>{const filled=$$('#doc textarea,#doc input[type=text]').filter(e=>e.value.trim().length>2).length;if(filled>=10){addPts(30);finish('ws',filled>=40?3:(filled>=25?2:1))}else toast('ابھی ورک شیٹ ادھوری ہے، مزید لکھیں 🙂')};
+ v.append(h('div',{class:'talk noprint'},'📝 ہدایت: ہر خانے میں اپنے ہاتھ سے (ٹائپ کر کے) لکھیں۔ شعر ۱ تا ۴ کی تشریح آپ نے سیکھی ہے، شعر ۵ تا ۱۰ کی تشریح اب خود لکھیں۔ مکمل ہو جائے تو «ڈاؤن لوڈ» دبائیں، آپ کا لکھا ہوا فائل میں محفوظ ہو جائے گا۔'));
+ v.append(h('div',{class:'ws-actions noprint'},btn('gold big','💾 اپنی ورک شیٹ ڈاؤن لوڈ کریں',dl),btn('plum','🖨️ پرنٹ / PDF',()=>{window.print();markWS()}),btn('ghost','🧹 سب صاف کریں',()=>{if(confirm('کیا واقعی سارا لکھا ہوا صاف کرنا ہے؟')){$$('#doc textarea,#doc input[type=text]').forEach(e=>{e.value='';e.tagName==='TEXTAREA'&&autosize(e)});$$('#doc input[type=radio]').forEach(r=>r.checked=false);wsSave()}})));
+ const d=h('div',{class:'doc',id:'doc'});v.append(d);
+ const ta=(k,rows,ph)=>h('textarea',{'data-k':k,rows:rows||2,placeholder:ph||''});
+ const ti=(k,ph)=>h('input',{type:'text','data-k':k,placeholder:ph||''});
+ d.append(h('div',{class:'dt'},h('h2',{},'ورک شیٹ — مثنوی سحرالبیان'),h('p',{},'شاعر: میر حسن  •  نظم: داستان تیاری میں باغ کی  •  جماعت ہشتم')));
+ const lab=(t,el)=>h('label',{},t,el);
+ const nameI=ti('name','نام');nameI.id='ws-name';nameI.oninput=e=>{S.name=e.target.value};
+ d.append(h('div',{class:'info'},lab('نام',nameI),lab('سیکشن',ti('sec')),lab('تاریخ',ti('date')),lab('کھیل کے پوائنٹ',h('input',{type:'text','data-k':'pts',id:'ws-pts',readonly:true}))));
+ /* Q1 */
+ d.append(h('h3',{},'سوال ۱: درج ذیل الفاظ کے معنی لکھیں'));
+ const t1=h('table',{});t1.append(h('tr',{},h('th',{},'لفظ'),h('th',{},'معنی'),h('th',{},'لفظ'),h('th',{},'معنی')));
+ for(let i=0;i<8;i++)t1.append(h('tr',{},h('td',{class:'w'},WSW[i]),h('td',{},ta('w'+i,2)),h('td',{class:'w'},WSW[i+8]),h('td',{},ta('w'+(i+8),2))));
+ d.append(t1);
+ /* Q2 */
+ d.append(h('h3',{},'سوال ۲: دیے گئے الفاظ سے اپنے جملے بنائیں'));
+ SENT_WORDS.forEach((w,i)=>d.append(h('div',{style:'display:flex;gap:10px;align-items:center;margin:4px 0'},h('span',{class:'chip right',style:'flex:none'},w),ti('s'+i,'اپنا جملہ لکھیں...'))));
+ /* Q3 */
+ d.append(h('h3',{},'سوال ۳: نظم کا مرکزی خیال لکھیں'),h('p',{style:'font-size:.85rem;color:#555'},'(شاعر اس نظم میں کیا بیان کرنا چاہتا ہے؟ دو سے تین جملے لکھیں۔)'),ta('markazi',4));
+ /* Q4 */
+ d.append(h('h3',{},'سوال ۴: ہر شعر کی تشریح اپنے لفظوں میں لکھیں'),h('p',{style:'font-size:.85rem;color:#555'},'(تشریح میں: شعر کا آسان مطلب، مشکل الفاظ اور شاعر کی کوئی خوبی ضرور لکھیں۔)'));
+ ASHAAR.forEach((s,i)=>d.append(h('div',{class:'tbox'},h('span',{class:'nm'},'شعر '+ud(i+1)+(i<4?' — کلاس میں سیکھا':' — آپ کی باری')),h('div',{class:'sh'},s.a+'  ◆  '+s.b),ta('t'+i,4,'اپنی تشریح یہاں لکھیں...'))));
+ /* Q5 */
+ d.append(h('h3',{},'سوال ۵: قافیے اور فنی خوبی'));
+ const t5=h('table',{});t5.append(h('tr',{},h('th',{},'شعر'),h('th',{},'مصرع'),h('th',{},'قافیے'),h('th',{},'سب سے نمایاں خوبی')));
+ WSQI.forEach((k,j)=>{const sel=h('select',{'data-k':'art'+j,style:'width:100%;padding:4px;border:0;background:#fbfbf2'},h('option',{value:''},'— چنیں —'),ART.map(a=>h('option',{value:a},a)));t5.append(h('tr',{},h('td',{class:'n'},ud(k+1)),h('td',{style:'font-size:.9rem'},ASHAAR[k].a),h('td',{},ti('q'+j,'مثلاً ...')),h('td',{},sel)))});
+ d.append(t5);
+ /* Q6 */
+ d.append(h('h3',{},'سوال ۶: نظم کا خلاصہ لکھیں'),h('p',{style:'font-size:.85rem;color:#555'},'(پانچ سے سات جملے: آغاز میں شاعر کیا کرتا ہے، پھر باغ کی کون سی خوبیاں بتاتا ہے، آخر میں منظر کس کی طرف آتا ہے؟)'),ta('khulasa',8));
+ /* Q7 */
+ const fsel=h('select',{'data-k':'favn',style:'padding:4px;border:2px solid var(--line);border-radius:10px;background:#fffef8'},h('option',{value:'-1'},'— شعر نمبر —'),ASHAAR.map((_,i)=>h('option',{value:String(i)},'شعر '+ud(i+1))));
+ d.append(h('h3',{},'سوال ۷: میرا پسندیدہ شعر'),h('div',{},'میرا پسندیدہ شعر: ',fsel),h('p',{style:'font-size:.85rem;color:#555'},'وجہ (دو دلائل کے ساتھ):'),ta('favwhy',3));
+ /* Q8 */
+ d.append(h('h3',{},'سوال ۸: میری اپنی منظر کشی'),ta('story',6,'اسکول کے باغ کی منظر کشی...'));
+ /* Q9 */
+ d.append(h('h3',{},'سوال ۹: میں نے آج کیا سیکھا؟ (خود جائزہ)'));
+ RATE_ITEMS.forEach((t,i)=>{const r=h('div',{class:'rate'});RATE_SC.forEach((s,j)=>r.append(h('label',{},h('input',{type:'radio',name:'r'+i,value:String(j+1),'data-k':'r'+i}),h('span',{},s))));d.append(h('div',{style:'margin:6px 0'},h('div',{},t),r))});
+ d.append(h('div',{class:'mh'},'اختتامی جملے'),lab('آج میں نے سیکھا:',ti('x1')),lab('مجھے سب سے مشکل لگا:',ti('x2')),lab('اپنے اسکول کے باغ میں، میں اس سبق کو اس طرح استعمال کروں گا/گی:',ti('x3')));
+ /* استاد کلید */
+ const key=h('details',{class:'key noprint'},h('summary',{},'🔑 استاد کے لیے: جوابی کلید'));
+ const kt=h('table',{});kt.append(h('tr',{},h('td',{},'مرکزی خیال'),h('td',{},MARKAZI)),h('tr',{},h('td',{},'خلاصہ'),h('td',{},KHULASA)));
+ ASHAAR.forEach((s,i)=>kt.append(h('tr',{},h('td',{},'تشریح شعر '+ud(i+1)),h('td',{},FULL[i]))));
+ WSW.forEach(w=>{const x=WORDS.find(y=>y.w===w);if(x)kt.append(h('tr',{},h('td',{},w),h('td',{},x.m)))});
+ key.append(kt);v.append(key);
+ d.addEventListener('input',e=>{if(e.target.tagName==='TEXTAREA')autosize(e.target);wsSave()});d.addEventListener('change',()=>wsSave());
+ fsel.addEventListener('change',e=>{S.fav=+e.target.value});
+ wsLoad();
+};
+function wsEnter(){const p=$('#ws-pts');if(p)p.value=ud(S.pts)+' پوائنٹ';syncWS();$$('#doc textarea').forEach(autosize)}
+
+/* ================= NAV + INIT ================= */
+function go(id){
+ $$('.view').forEach(x=>x.classList.toggle('active',x.id==='v-'+id));
+ $$('#nav button').forEach(b=>b.classList.toggle('on',b.dataset.id===id));
+ window.scrollTo({top:0});$('#bubble').classList.remove('show');const on=$('#nav .on');if(on)on.scrollIntoView({inline:'center',block:'nearest'});
+ if(id==='ws')wsEnter();
+}
+function init(){
+ const nav=$('#nav');nav.append(h('button',{'data-id':'home',onclick:()=>go('home')},'🏠 نقشہ'));
+ ST.forEach(s=>nav.append(h('button',{'data-id':s.id,onclick:()=>go(s.id)},s.ico+' '+s.t)));
+ const app=$('#app');
+ ['home',...ST.map(s=>s.id)].forEach(id=>{const v=h('section',{class:'view',id:'v-'+id});app.append(v);B[id](v)});
+ $('#snd').onclick=e=>{S.mute=!S.mute;e.target.textContent=S.mute?'🔇':'🔊'};
+ $('#homeb').onclick=()=>go('home');
+ go('home');refresh();
+}
+document.addEventListener('DOMContentLoaded',init);
+
+</script>
+</body>
+</html>
